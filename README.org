@@ -1,0 +1,42 @@
+#+TITLE:  Flora Computer Simulator
+#+DATE:   2015 Nov 06
+
+One day, my daughter read a book, [[http://www.mhpbooks.com/books/adas-algorithm/][Ada’s Algorithm]], for her English
+class, and we had lots of discussions about Ada’s actual contributions
+to the field of computer science.
+
+He work described the concept of an algorithm, which was the first
+computer “code”, but to render her ideas, I decided that I might
+create a /simulator/. Since I’m not knowledgeable on Babbage’s
+original engines, I thought the simulator could resemble the 6502
+processor that I fell in love with as a boy.
+
+This simulator is a complete web application and requires no
+server-side code or framework. It is written CoffeeScript, and the [[file:ada.coffee][CPU
+instructions]] should be simple enough to understand (the parser code in
+the [[file:hardware.coffee][hardware.coffee]] file makes heavy use of [[https://lodash.com/][LoDash]]’s =reduce=
+function, and may be more difficult to follow).
+
+Its use, however, is a very simple, controlled “central processing
+unit” that could be used to teach students the underlying technology
+of all computer systems... The teaching part is what I’m currently
+working on.
+
+* Running
+
+  If you would like to host this project, clone this repository to
+  some directory available on your web server. Some files are not part
+  of this repository, and should be easily downloaded:
+
+  - [[https://raw.githubusercontent.com/lodash/lodash-compat/3.10.1/lodash.min.js][LoDash]] :: =js/lodash.js=
+  - [[http://www.kreativekorp.com/swdownload/fonts/retro/pr.zip][Apple's Bitmapped Font]]  :: =PrintChar21.ttf= (see [[http://www.kreativekorp.com/software/fonts/apple2.shtml][this page]])
+  - [[http://www.fonts101.com/fonts/view/Uncategorized/51303/Motter_Tektura][Motter Tektura Font]] :: =fonts/mottertektura.tff=
+
+  That should do ’er.
+
+* License
+
+  Copyright 2015, Howard Abrams
+
+  This code is licensed on the GPL, but I may change that this
+  weekend. ;-)

@@ -1,0 +1,326 @@
+@font-face {
+    font-family: apple;
+    src: url(fonts/PrintChar21.ttf);
+}
+@font-face {
+    font-family: motter;
+    src: url(fonts/mottertektura.ttf);
+}
+
+body {
+    background-color: #222;
+    font-family: "New Courier", courier, monospace;
+}
+
+#input-panel {
+    background-color: beige;
+    background: -webkit-linear-gradient(beige, white); /* For Safari */
+    background: -moz-linear-gradient(beige, white);    /* For Firefox */
+    background: linear-gradient(beige, white);
+}
+
+h1 {
+    color: #888;
+    font-family: motter, verdana, sans;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 800px;
+}
+
+#monitor {
+    float: left;
+    background-color: beige;
+    background-image: url(img/monitor-background-supersoft.png);
+    background-size: 100% 100%;
+    padding: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#input {
+    /* position: absolute; */
+    /* top: 60px; */
+    /* left: 40px; */
+    /* width: 800px; */
+    /* height: 300px; */
+    font-size: 18px;
+    font-family: apple;
+    padding: 16px;
+    border: 3px solid #777;
+    border-radius: 25px;
+    background-color: black;
+    color: #6f6;
+}
+
+/*
+input[type="submit"], button {
+    border: 2px solid #6f6;
+    border-radius: 5px;
+    background-color: black;
+    color: #6f6;
+    margin: 8px;
+    margin-top: 32px;
+    font-weight: bold;
+    font-size: 32px;
+    font-family: minecraft;
+    padding: 6px;
+}
+
+input[type="text"] {
+    font-family: minecraft;
+    border: 3px solid #6f6;
+    border-radius: 15px;
+    background-color: black;
+    color: #6f6;
+    font-size: 48px;
+    margin-top: 16px;
+    margin-left: 16px;
+    width: 800px;
+    padding: 6px;
+}
+
+button:disabled {
+    border: 2px solid #050;
+    color: #050;
+}
+
+input[type="submit"]:hover, button:hover {
+    color: black;
+    background-color: #6f6;
+}
+
+button:disabled:hover {
+    color: #050;
+    background-color: black;
+}
+*/
+
+
+
+
+#instructions {
+    font-family: courier, monospace;
+    font-size: 13px;
+    color: #444;
+    padding: 10px;
+    overflow: auto;
+}
+
+ol.codes {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+ol.codes > li {
+    counter-increment: codeslistcounter;
+}
+
+ol.codes > li:before {
+    content: counter(codeslistcounter) ":";
+    font-weight: bold;
+    float: left;
+    width: 3em;
+}
+
+ol.codes:first-child {
+    counter-reset: codeslistcounter -1;
+}
+
+#column-1 {
+    float: left;
+    margin-right: 10px;
+}
+
+#computer-panel {
+    clear: both;
+    background-image: url(img/green-circuit-board.svg);
+    background-size: auto 100%;
+}
+
+.long-panel {
+    overflow: auto;
+    max-width: 100%;
+}
+
+.memory-table {
+    margin: 20px;
+    border-spacing: 0;
+}
+
+.memory-table th {
+    background-color: white;
+    color: black;
+    border: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.memory-table td {
+    font-family: apple;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 8px;
+    font-size: 24px;
+    min-width: 40px;
+    text-align: center;
+}
+
+#pointer-row th {
+    background-color: white;
+    color: black;
+    border: 0;
+    font-size: 16px;
+}
+
+#keyboard-panel {
+    float: left;
+    background-color: beige;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.left-side-button {
+
+}
+
+.key-border {
+    border: 2px solid gray;
+    background-color: #555;
+    border-radius: 2px;
+    margin-bottom: 8px;
+}
+
+.pressed {   /* Added to .key-border */
+    border-top-width: 4px;
+    border-left-width: 4px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+}
+
+.key {
+    font-family: "Lucida Grande", Helvetica, Arial, sans;
+    background: #d3cfcc;
+    border-color: #ece8e4 #dedad6 #c9c4c4;
+    /* width: 40px;
+  height: 45px; */
+    margin: 2px;
+    border-width: 3px 7px 10px;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+.key .keycap {
+    /* width: 33px;
+  height: 40px; */
+    /* padding: 5px 0 0 7px; */
+    line-height: 1;
+    background: #f5f3f1;
+    background: -webkit-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);
+    background: -moz-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);
+    background: -ms-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);
+    background: -o-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);
+    background: linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    position: relative;
+}
+
+.keycap {
+    width: inherit;
+    height: inherit;
+    font-size: 32px;
+    line-height: 45px;
+    text-align: center;
+    text-indent: 7px;
+    padding: 12px;
+    background: #cdd3de;
+    background: -webkit-linear-gradient(left, #bbc3d2, #cdd3de, #bbc3d2);
+    background: -moz-linear-gradient(left, #bbc3d2, #cdd3de, #bbc3d2);
+    background: -ms-linear-gradient(left, #bbc3d2, #cdd3de, #bbc3d2);
+    background: -o-linear-gradient(left, #bbc3d2, #cdd3de, #bbc3d2);
+    background: linear-gradient(left, #bbc3d2, #cdd3de, #bbc3d2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    position: relative;
+}
+
+.keycap:hover {
+    background: white;
+}
+
+
+.register {
+    float: left;
+    min-width: 100px;
+}
+
+#output-panel {
+    background-color: beige;
+    background: -webkit-linear-gradient(beige, white); /* For Safari */
+    background: -moz-linear-gradient(beige, white);    /* For Firefox */
+    background: linear-gradient(beige, white);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.light {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    float: left;
+    border: 3px solid #bbb;
+}
+
+.off {
+    background: -webkit-radial-gradient(#444, #000); /* Safari 5.1 to 6.0 */
+    background: -moz-radial-gradient(#444, #000); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#444, #000); /* Standard syntax */
+}
+
+.on-red {
+    background: -webkit-radial-gradient(#f99, #f00); /* Safari 5.1 to 6.0 */
+    background: -moz-radial-gradient(#f99, #f00); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#f99, #f00); /* Standard syntax */
+}
+
+.on-green {
+    background: -webkit-radial-gradient(#9f9, #0f0); /* Safari 5.1 to 6.0 */
+    background: -moz-radial-gradient(#9f9, #0f0); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#9f9, #0f0); /* Standard syntax */
+}
+
+.on-blue {
+    background: -webkit-radial-gradient(#99f, #00f); /* Safari 5.1 to 6.0 */
+    background: -moz-radial-gradient(#99f, #00f); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#99f, #00f); /* Standard syntax */
+}
+
+.on-yellow {
+    background: -webkit-radial-gradient(#ff9, #ff0); /* Safari 5.1 to 6.0 */
+    background: -moz-radial-gradient(#ff9, #ff0); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#ff9, #ff0); /* Standard syntax */
+}
+
+.on-magenta {
+    background: -webkit-radial-gradient(#fdf, #f0f); /* Safari 5.1 to 6.0 */
+    background: -moz-radial-gradient(#fdf, #f0f); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#fdf, #f0f); /* Standard syntax */
+}
+
+.on-cyan {
+    background: -webkit-radial-gradient(#dff, #0ff); /* Safari 5.1 to 6.0 */
+    background: -moz-radial-gradient(#dff, #0ff); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#dff, #0ff); /* Standard syntax */
+}
+
+.on-white {
+    background: -webkit-radial-gradient(#fff, #ddd); /* Safari 5.1 to 6.0 */
+    background: -moz-radial-gradient(#fff, #ddd); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#fff, #ddd); /* Standard syntax */
+}

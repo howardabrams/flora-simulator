@@ -1,0 +1,112 @@
+# COMPUTER VARIABLES
+
+memory = makeMemory()
+pointer = 0
+registerX = 0      # Easier with three registers?
+registerY = 0      # Just ignore Y and Z for now...
+registerZ = 0
+
+
+# ----------------------------------------------------------------------
+# COMPUTER FUNCTIONS
+# ----------------------------------------------------------------------
+
+stopProgram = () ->
+     debug "End Program"
+
+setMemory = (addr, value) ->
+     memory[addr] = value
+     debug "In setMemory"
+
+putRegisterX = (value) ->
+     registerX = value
+     debug "In putRegisterX"
+
+putRegisterY = (value) ->
+     registerY = value
+     debug "In putRegisterY"
+
+putAddressRegisterX = (addr) ->
+     registerX = memory[addr]
+     debug "In putAddressRegisterX"
+
+putAddressRegisterY = (addr) ->
+     registerY = memory[addr]
+     debug "In putAddressRegisterY"
+
+setRegisterX = (addr) ->
+     memory[addr] = registerX
+     debug "In setRegisterX"
+
+setRegisterY = (addr) ->
+     memory[addr] = registerY
+     debug "In setRegisterY"
+
+addRegisters = () ->
+     registerX = registerX + registerY
+     debug "In addRegisters"
+
+incrementRegisterX = () ->
+     registerX++
+     debug "In incrementRegisterX"
+
+incrementRegisterY = () ->
+     registerY++
+     debug "In incrementRegisterY"
+
+randomValue = () ->
+        registerX = _.random(255)
+        debug "in randomValue"
+
+jumpAddress = (addr) ->
+        pointer = addr
+        debug "jumped"
+
+# ----------------------------------------------------------------------
+#  CODE LOOKUP TABLE
+# ----------------------------------------------------------------------
+
+operands = [{ abbr: "END", params: 0, code: stopProgram, help: "Ends the program"},
+            { abbr: "SET", params: 2, code: setMemory,   help: "Sets memory address to value"},
+            { abbr: "LDX", params: 1, code: putRegisterX, help: "Loads a value into X Register"},
+            { abbr: "LDY", params: 1, code: putRegisterY, help: "Loads a value into Y Register"},
+            { abbr: "LAX", params: 1, code: putAddressRegisterX, help: "Loads value from address into X Register"},
+            { abbr: "LAY", params: 1, code: putAddressRegisterY, help: "Loads value from address into Y Register"},
+            { abbr: "SAX", params: 1, code: setRegisterX, help: "Sets address to value in X Register"},
+            { abbr: "SAY", params: 1, code: setRegisterY, help: "Sets address to value in Y Register"},
+            { abbr: "ADD", params: 0, code: addRegisters, help: "Adds the values in X and Y Registers. Sum in X Register"},
+            { abbr: "RND", params: 0, code: randomValue, help: "Puts a random value in X Register"},
+            { abbr: "INX", params: 0, code: incrementRegisterX, help: "Increments X Register by 1"}
+            { abbr: "INY", params: 0, code: incrementRegisterY, help: "Increments Y Register by 1"}
+            { abbr: "JMP", params: 1, code: jumpAddress, help: "Jump to address"}
+         ]
+
+# ----------------------------------------------------------------------
+# HELPER FUNCTIONS
+# ----------------------------------------------------------------------
+
+load = ->
+     console.log "Loading..."
+
+process = ->
+     debug "Starting"
+     step() while memory[pointer] != 0
+     debug "Process Complete"
+
+step = ->
+     command = operands[ memory[pointer] ]
+     switch command.params
+             when 0
+                pointer += 1
+                command.code()
+             when 1
+                p1 = memory[pointer+1]
+                pointer += 2
+                command.code(p1)
+             when 2
+                p1 = memory[pointer+1]
+                p2 = memory[pointer+2]
+                pointer += 3
+                command.code(p1, p2)
+
+console.log "System Loaded."
