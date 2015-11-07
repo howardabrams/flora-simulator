@@ -1,4 +1,19 @@
+# This global variable holds the "state" to whether the memory and
+# other values are shown in decimal or hexadecimal
+
+showDecimal = true
+
+getNumberDisplay = (value) ->
+        if showDecimal
+                value.toString()
+        else
+                if value < 16
+                        "0" + value.toString(16)
+                else
+                        value.toString(16)
+
 # SYSTEM FUNCTIONS
+
 loadSystem = ->
         data = loadMemory( $("#input").val() )
         heap = _.fill( Array(256 - data.length), 0)
@@ -106,34 +121,41 @@ loadMemory = (strData) ->
 #   [ 2, 10, 10, 6, 129, 12, 2, 0 ]
 # ----------------------------------------------------------------------
 
-displayMemElem = (value, index) ->
+displayLowerElem = (value, index) ->
         # console.log "Display:", value, index, pointer
-        $("#memory-index").append( "<th>" + index + "</th>" )
-        $("#memory-strip").append( "<td>" + value + "</td>" )
+        highlight = if pointer == index then "class='highlight'" else ""
+        $("#memory-index").append( "<th #{highlight}>" + getNumberDisplay(index) + "</th>" )
+        $("#memory-strip").append( "<td #{highlight}>" + getNumberDisplay(value) + "</td>" )
         if pointer == index
-                $("#pointer-row").append("<th>↑</th>")
+                $("#lower-pointer").append("<th #{highlight}>↑</th>")
         else
-                $("#pointer-row").append("<th>&nbsp;</th>")
+                $("#lower-pointer").append("<th>&nbsp;</th>")
 
 displayUpperElem = (value, index) ->
         # console.log "Display:", value, index, pointer
-        $("#upper-index").append( "<th>" + index + "</th>" )
-        $("#upper-strip").append( "<td>" + value + "</td>" )
+        highlight = if pointer == index then "class='highlight'" else ""
+        $("#upper-index").append( "<th #{highlight}>" + getNumberDisplay(index) + "</th>" )
+        $("#upper-strip").append( "<td #{highlight}>" + getNumberDisplay(value) + "</td>" )
+        if pointer == index
+                $("#upper-pointer").append("<th #{highlight}>↑</th>")
+        else
+                $("#upper-pointer").append("<th>&nbsp;</th>")
 
 displayMemory = ->
         $("#memory-index").html("")
         $("#memory-strip").html("")
-        $("#pointer-row").html("")
+        $("#lower-pointer").html("")
+        $("#upper-pointer").html("")
         $("#upper-index").html("")
         $("#upper-strip").html("")
 
-        displayMemElem(value, index)   for value, index in memory[..127]
+        displayLowerElem(value, index)     for value, index in memory[..127]
         displayUpperElem(value, index+128) for value, index in memory[128..]
 
-        $("#pointer").html( pointer )
-        $("#x-register").html( registerX )
-        $("#y-register").html( registerY )
-        $("#z-register").html( registerZ )
+        $("#pointer").html( getNumberDisplay(pointer) )
+        $("#x-register").html( getNumberDisplay(registerX) )
+        $("#y-register").html( getNumberDisplay(registerY) )
+        $("#z-register").html( getNumberDisplay(registerZ) )
 
 displayLight = (num, addr) ->
         light = $("#light-#{num}")
@@ -162,6 +184,16 @@ showInstructionCode = (mnemonic, note) ->
 showInstructions = ->
         [showInstructionCode(code.abbr, code.help) for code in operands]
 
+toggleHexDec = ->
+        image = $("#hex-dec-toggle")
+        if showDecimal
+                image.attr("src", "img/switch-right.svg")
+                showDecimal = false
+        else
+                image.attr("src", "img/switch-left.svg")
+                showDecimal = true
+        updateSystem()
+
 $( ->
         $("#load").click( loadSystem )
         $("#step").click( stepSystem )
@@ -171,6 +203,8 @@ $( ->
                 $(this).parents(".key-border").addClass("pressed")
         $(".keycap").mouseup ->
                 $(this).parents(".key-border").removeClass("pressed")
+        $("#hex-dec-area").click ->
+                toggleHexDec()
 
         showInstructions()
         updateSystem()

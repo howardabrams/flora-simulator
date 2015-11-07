@@ -17,12 +17,14 @@ body {
     background: -webkit-linear-gradient(beige, white); /* For Safari */
     background: -moz-linear-gradient(beige, white);    /* For Firefox */
     background: linear-gradient(beige, white);
+    border-radius: 10px;
+    margin: 10px;
 }
 
 h1 {
     color: #888;
     font-family: motter, verdana, sans;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     padding: 0;
     margin: 0;
     text-align: center;
@@ -54,58 +56,13 @@ h1 {
     color: #6f6;
 }
 
-/*
-input[type="submit"], button {
-    border: 2px solid #6f6;
-    border-radius: 5px;
-    background-color: black;
-    color: #6f6;
-    margin: 8px;
-    margin-top: 32px;
-    font-weight: bold;
-    font-size: 32px;
-    font-family: minecraft;
-    padding: 6px;
-}
-
-input[type="text"] {
-    font-family: minecraft;
-    border: 3px solid #6f6;
-    border-radius: 15px;
-    background-color: black;
-    color: #6f6;
-    font-size: 48px;
-    margin-top: 16px;
-    margin-left: 16px;
-    width: 800px;
-    padding: 6px;
-}
-
-button:disabled {
-    border: 2px solid #050;
-    color: #050;
-}
-
-input[type="submit"]:hover, button:hover {
-    color: black;
-    background-color: #6f6;
-}
-
-button:disabled:hover {
-    color: #050;
-    background-color: black;
-}
-*/
-
-
-
-
 #instructions {
     font-family: courier, monospace;
     font-size: 13px;
     color: #444;
     padding: 10px;
     overflow: auto;
+    display: none;
 }
 
 ol.codes {
@@ -137,6 +94,7 @@ ol.codes:first-child {
     clear: both;
     background-image: url(img/green-circuit-board.svg);
     background-size: auto 100%;
+    border-radius: 10px;
 }
 
 .long-panel {
@@ -147,6 +105,7 @@ ol.codes:first-child {
 .memory-table {
     margin: 20px;
     border-spacing: 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.95);
 }
 
 .memory-table th {
@@ -168,11 +127,23 @@ ol.codes:first-child {
     text-align: center;
 }
 
-#pointer-row th {
+.pointer-row th {
     background-color: white;
     color: black;
     border: 0;
     font-size: 16px;
+    color: red;
+    font-family: "Lucida Grande", Helvetica, Arial, sans;
+    font-weight: bolder;
+}
+
+th.highlight {
+    background-color: orange;
+    color: white;
+}
+td.highlight {
+    color: orange;
+    border: 1px solid orange;
 }
 
 #keyboard-panel {
@@ -181,6 +152,7 @@ ol.codes:first-child {
     margin: 10px;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.95);
 }
 
 .left-side-button {
@@ -192,13 +164,18 @@ ol.codes:first-child {
     background-color: #555;
     border-radius: 2px;
     margin-bottom: 8px;
+
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
 }
 
 .pressed {   /* Added to .key-border */
-    border-top-width: 4px;
-    border-left-width: 4px;
-    border-right-width: 0px;
-    border-bottom-width: 0px;
+    border-top-width: 3.5px;
+    border-left-width: 3.5px;
+    border-right-width: 0.5px;
+    border-bottom-width: 0.5px;
 }
 
 .key {
@@ -252,6 +229,19 @@ ol.codes:first-child {
     background: white;
 }
 
+#hex-dec-area {
+    font-family: "Lucida Grande", Helvetica, Arial, sans;
+    white-space: nowrap;
+}
+
+#hex-dec-area .label, #hex-dec-area img {
+    float: left;
+    padding-right: 4px;
+}
+
+#hex-dec-toggle {
+    float: left;
+}
 
 .register {
     float: left;
@@ -263,18 +253,24 @@ ol.codes:first-child {
     background: -webkit-linear-gradient(beige, white); /* For Safari */
     background: -moz-linear-gradient(beige, white);    /* For Firefox */
     background: linear-gradient(beige, white);
-    margin: 20px;
+    margin: 10px;
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 10px;
+}
+
+.light-area {
+    float: left;
+    margin: 10px;
+    text-align: center;
+    font-family: "Lucida Grande", Helvetica, Arial, sans;
 }
 
 .light {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    margin: 10px;
-    float: left;
     border: 3px solid #bbb;
+    margin-bottom: 8px;
 }
 
 .off {

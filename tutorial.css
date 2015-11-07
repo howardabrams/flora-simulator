@@ -1,0 +1,25 @@
+@font-face {
+    font-family: apple;
+    src: url(fonts/PrintChar21.ttf);
+}
+@font-face {
+    font-family: motter;
+    src: url(fonts/mottertektura.ttf);
+}
+
+body {
+    background-color: #222;
+    font-family: "New Courier", courier, monospace;
+    background-color: beige;
+    background: -webkit-linear-gradient(beige, white); /* For Safari */
+    background: -moz-linear-gradient(beige, white);    /* For Firefox */
+    background: linear-gradient(beige, white);
+    height: 100%;
+    padding: 20px;
+
+}
+
+h1 {
+    font-family: motter;
+    color: gray;
+}

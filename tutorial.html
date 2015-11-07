@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Tutorial</title>
+    <link rel="stylesheet" href="tutorial.css" type="text/css"/>
+    <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="js/lodash.js"></script>
+    <script type="text/javascript" src="//coffeescript.org/extras/coffee-script.js"></script>
+    <script type="text/coffeescript" src="tutorial.coffee"></script>
+  </head>
+  <body>
+    <div id="contents">
+      <h1>Welcome</h1>
+
+      <p>
+        Ada Lovelace (1815-1852) was deemed the world’s first computer
+        programmer. She worked with Charles Babbage, who created the
+        Analytical Engine, a mechanical computer that took instructions
+        via punched notecards. Ada saw the future of computers, rather
+        than the Engine’s physical and mathematical purposes as Babbage
+        did. She knew that numbers could also be symbols and commands.
+      </p>
+      <p>
+	This is a simulation of Ada’s ideas, and is very similar to
+	early microcomputers. You can enter commands and numbers in the
+	black box. The commands are listed on the side, you can type
+	them in either number (4) or letter (INC) form. Start with a
+	command, and making sure a number (not another command)
+	follows it. For example:
+      </p>
+      <p>
+        If we type in:
+      </p>
+      <ul>
+        <li> 2 &lt;- command to load the next number into the x-register
+        <li> 3 &lt;- an actual number (which is in the x-register)
+        <li> 4 &lt;- increment the number in the x-register by 1
+      </ul>
+      <p>
+        Pressing load puts the code you typed into memory files. Press
+        step to show the first step (putting 3 in the x-register), and
+        press step again to show the final step (add 1 to 3). Which
+        leaves up with the number 4 in the x-register.
+      </p>
+
+      <p>
+        The three rows on top of the wire image (load, run, and step)
+        are modeling the inside of the computer. In real computers, you
+        would never see this part. The boxes are memory spots, and each
+        box can hold on to a number. Once you have assigned a number to
+        a memory location (with command 1), the number will appear in a
+        register.
+      </p>
+      <p>
+	These commands can not only be operations (such as adding,
+	incrementing by 1), but can also be commands to turn on a
+	light or play a sound. The four lights on the bottom can also
+	be programmed with the Run row. Since the run row starts with
+	memory spot 129 (you can ignore 128 for now) we will have to
+	assign a number to that spot:
+      </p>
+      <p>
+        If we type in
+      </p>
+      <ul>
+        <li> 1 &nbsp;&nbsp;&lt;- sets the memory box
+        <li> 129 &lt;- the memory box we want to use
+        <li> 4 &nbsp;&nbsp;&lt;- the number we want in the memory box
+      </ul>
+      <p>
+        Since a number (other than 0) is now in the run row, the first
+        light turns on, and since that number is a 4 this turns the
+        light blue.  You can do some fun programs while playing around
+        with this simulator. And even make your own commands too!
+      </p>
+      <p>
+        <b>Happy Hacking!</b>
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flora's Experiment</title>
+
+    <link rel="stylesheet" href="ada.css" type="text/css"/>
+    <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="js/lodash.js"></script>
+    <script type="text/javascript" src="//coffeescript.org/extras/coffee-script.js"></script>
+    <script type="text/javascript" src="computer.js"></script>
+  </head>
+  <body>
+    <div id="contents">
+      <div id="input-panel">
+        <div id="the-console">
+          <h1>Flora Computer Simulator</h1>
+          <div id="monitor">
+            <textarea id="input" rows="10" cols="24"></textarea>
+          </div>
+        </div>
+        <div id="instructions">
+          <ol start="0" class="codes">
+          </ol>
+        </div>
+        <br style="clear:both" />
+      </div>
+
+      <div id="computer-panel">
+        <div id="keyboard-panel">
+          <div class="key-border">
+            <div class="key">
+              <div id="load" class="keycap"> Load </div>
+            </div>
+          </div>
+          <div class="key-border">
+            <div class="key">
+              <div id="go" class="keycap"> Run </div>
+            </div>
+          </div>
+          <div class="key-border">
+            <div class="key">
+              <div id="step" class="keycap"> Step </div>
+            </div>
+          </div>
+          <div id="hex-dec-area">
+            <div class="label">Dec</div>
+            <img id="hex-dec-toggle" src="img/switch-left.svg"/>
+            <div>Hex</div>
+          </div>
+        </div>
+
+        <div id="memory-area">
+          <div id="memory-section" class="long-panel">
+            <table class="memory-table">
+              <tr id="memory-index"></tr>
+              <tr id="memory-strip"></tr>
+              <tr id="lower-pointer" class="pointer-row"></tr>
+            </table>
+          </div>
+          <div id="upper-section" class="long-panel">
+            <table class="memory-table">
+              <tr id="upper-index"></tr>
+              <tr id="upper-strip"></tr>
+              <tr id="upper-pointer" class="pointer-row"></tr>
+            </table>
+          </div>
+          <div id="register-section">
+            <table class="register memory-table">
+              <tr>
+                <th>Pointer</th>
+              </tr>
+              <tr>
+                <td id="pointer"> 0 </td>
+              </tr>
+            </table>
+            <table class="register memory-table">
+              <tr>
+                <th>X Register</th>
+              </tr>
+              <tr>
+                <td id="x-register"> 0 </td>
+              </tr>
+            </table>
+            <table class="register memory-table">
+              <tr>
+                <th>Y Register</th>
+              </tr>
+              <tr>
+                <td id="y-register"> 0 </td>
+              </tr>
+            </table>
+            <table class="register memory-table">
+              <tr>
+                <th>Z Register</th>
+              </tr>
+              <tr>
+                <td id="z-register"> 0 </td>
+              </tr>
+            </table>
+            <br style="clear:both" />
+          </div>
+        </div>
+      </div>
+
+      <div id="output-panel">
+        <div class="light-area">
+          <div id="light-1" class="light off">
+            &nbsp;
+          </div>
+          1
+        </div>
+        <div class="light-area">
+          <div id="light-2" class="light off">
+            &nbsp;
+          </div>
+          2
+        </div>
+        <div class="light-area">
+          <div id="light-3" class="light off">
+            &nbsp;
+          </div>
+          3
+        </div>
+        <div class="light-area">
+          <div id="light-4" class="light off">
+            &nbsp;
+          </div>
+          4
+        </div>
+        <br style="clear:both" />
+      </div>
+    </div>
+  </body>
+</html>
