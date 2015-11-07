@@ -178,12 +178,6 @@ updateSystem = ->
         displayMemory()
         displayLights()
 
-showInstructionCode = (mnemonic, note) ->
-        $("#instructions ol").append( "<li><b>#{mnemonic}</b> - #{note}</li>")
-
-showInstructions = ->
-        [showInstructionCode(code.abbr, code.help) for code in operands]
-
 toggleHexDec = ->
         image = $("#hex-dec-toggle")
         if showDecimal
@@ -206,7 +200,6 @@ $( ->
         $("#hex-dec-area").click ->
                 toggleHexDec()
 
-        showInstructions()
         updateSystem()
 
         console.log "System Powered On."

@@ -6,11 +6,19 @@ function makeMemory(size) {
 $( function() {
 
     $.get("ada.coffee", function(ada) {
-        $.get("hardware.coffee", function(hardware) {
-            var coffee = window.CoffeeScript;
-            var code = coffee.compile(ada + hardware);
-            eval(code);
-        });
+        if (location.pathname.endsWith("tutorial.html")) {
+            $.get("tutorial.coffee", function(hardware) {
+                var coffee = window.CoffeeScript;
+                var code = coffee.compile(ada + hardware);
+                eval(code);
+            });
+        } else {
+            $.get("hardware.coffee", function(hardware) {
+                var coffee = window.CoffeeScript;
+                var code = coffee.compile(ada + hardware);
+                eval(code);
+            });
+        }
     });
 
 });
