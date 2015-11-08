@@ -29,6 +29,8 @@ working on.
   of this repository, and should be easily downloaded:
 
   - [[https://raw.githubusercontent.com/lodash/lodash-compat/3.10.1/lodash.min.js][LoDash]] :: =js/lodash.js=
+  - [[https://github.com/js-cookie/js-cookie][JS-Cookie]] :: =js/js.cookie.js=
+  - [[https://jqueryui.com/resources/download/jquery-ui-1.11.4.zip][jQuery UI]] :: =ui/jquery-ui.js=
   - [[http://www.kreativekorp.com/swdownload/fonts/retro/pr.zip][Apple's Bitmapped Font]]  :: =PrintChar21.ttf= (see [[http://www.kreativekorp.com/software/fonts/apple2.shtml][this page]])
   - [[http://www.fonts101.com/fonts/view/Uncategorized/51303/Motter_Tektura][Motter Tektura Font]] :: =fonts/mottertektura.tff=
 

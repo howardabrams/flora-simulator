@@ -7,19 +7,45 @@
     src: url(fonts/mottertektura.ttf);
 }
 
+html, body  {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    /* overflow: hidden; */
+}
+
 body {
     background-color: #222;
     font-family: "New Courier", courier, monospace;
+}
+
+#accordion {
+    height: 100%;
+}
+
+.apanel {
     background-color: beige;
     background: -webkit-linear-gradient(beige, white); /* For Safari */
     background: -moz-linear-gradient(beige, white);    /* For Firefox */
     background: linear-gradient(beige, white);
-    height: 100%;
-    padding: 20px;
-
 }
 
 h1 {
     font-family: motter;
     color: gray;
+}
+
+pre {
+    background-color: #333;
+    color: #6f6;
+    font-family: apple;
+    padding: 8px;
+}
+
+a {
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 3px;
+    background-color: #e2e2c5;
+    padding: 3px;
 }
