@@ -11,12 +11,12 @@ html, body  {
     height: 100%;
     padding: 0;
     margin: 0;
-    /* overflow: hidden; */
 }
 
 body {
     background-color: #222;
     font-family: "New Courier", courier, monospace;
+    line-height: 140%;
 }
 
 #accordion {
@@ -35,10 +35,11 @@ h1 {
     color: gray;
 }
 
-pre {
+.apanel pre {
     background-color: #333;
     color: #6f6;
     font-family: apple;
+    font-size: 18px;
     padding: 8px;
 }
 
@@ -48,4 +49,12 @@ a {
     border-radius: 3px;
     background-color: #e2e2c5;
     padding: 3px;
+}
+
+#info-dialog {
+    background-color: white;
+}
+
+#info-dialog a {
+    background-color: #f5f5dc;
 }

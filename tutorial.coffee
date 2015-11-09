@@ -6,19 +6,37 @@ showInstructionCode = (mnemonic, note) ->
 showInstructions = ->
         [showInstructionCode(code.abbr, code.help) for code in operands]
 
+loadPage = (url, dest, callback) ->
+        ha = $("#holding-area")
+
+        ha.load(url, null, (data) ->
+                section = $("#holding-area div#content")
+                if section.length == 1
+                        section.clone().appendTo(dest).find("h1").empty()
+                else
+                        dest.html(data)
+                if callback
+                        title = $("title,h1", ha).first().text()
+                        callback(title, dest)
+                ha.html(""))  # Clear it out
+
+
 # load content and open dialog
 showInfoDialog = (url) ->
-        $("#info-dialog").load(url)
-        $("#info-dialog").dialog("open")
+        loadPage(url, "#info-dialog", (title) ->
+                $("#info-dialog").dialog("option", "title", title)
+                $("a", "#info-dialog").attr("target", "_new")
+                $("#info-dialog").dialog("open"))
 
 $( ->
         bookmark = Cookies.get('bookmark') || 0
+        dialogHeight = $("body").innerHeight() - 80
+        dialogWidth  = $("body").innerWidth() - 80
 
         $("#info-dialog").dialog({
            autoOpen: false,
-           # height: 300,
-           # width: 350,
-           # modal: true
+           height: dialogHeight,
+           width: dialogWidth
         });
 
         $( "#accordion" ).accordion({
@@ -36,10 +54,12 @@ $( ->
 
         $(".loadable").each ->
                 url = "tutorial/" + $(this).attr("id")
-                $(this).load(url, null, ->
-                        $("a").click ->
+                dest = $(this)
+                loadPage(url, dest, ->
+                        $("a", dest).click ->
                                 url = "tutorial/" + $(this).attr("href")
                                 showInfoDialog(url)
                                 return false
+
                 )
 )
