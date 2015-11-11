@@ -94,14 +94,17 @@ labelReducer = (coll, code) ->
         else
                 [ labels, data.concat(code), pointer + 1 ]
 
+fixCodeLine = (line) ->
+        line.replace(/ *;.*$/, "").toUpperCase().split(/[ \t,]/)
+
 # Loading code into memory amounts to:
 #   - tokenizing the string given
 #   - creating an operand_hash corresponding to the operands and labels
 #   - converting each token into its equivalent value
 
-loadMemory = (strData) ->
+loadMemory = (source) ->
         # Create tokens by ignoring all whitespace:
-        tokens = strData.split(/[ \n\t,]/).filter(notEmpty)
+        tokens = _.flatten( source.split(/[\n\r]/).map(fixCodeLine) ).filter(notEmpty)
 
         [ labels, code ] = _.reduce(tokens, labelReducer, [{}, [], 0])
         new_operands = _.merge( getAbbrCodes(operands), labels )
