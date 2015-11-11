@@ -18,29 +18,29 @@ setMemory = (addr, value) ->
      memory[addr] = value
      debug "In setMemory"
 
-putRegisterX = (value) ->
+loadRegisterX = (value) ->
      registerX = value
-     debug "In putRegisterX"
+     debug "In loadRegisterX"
 
-putRegisterY = (value) ->
+loadRegisterY = (value) ->
      registerY = value
-     debug "In putRegisterY"
+     debug "In loadRegisterY"
 
-putAddressRegisterX = (addr) ->
+loadAddressRegisterX = (addr) ->
      registerX = memory[addr]
-     debug "In putAddressRegisterX"
+     debug "In loadAddressRegisterX"
 
-putAddressRegisterY = (addr) ->
+loadAddressRegisterY = (addr) ->
      registerY = memory[addr]
-     debug "In putAddressRegisterY"
+     debug "In loadAddressRegisterY"
 
-setRegisterX = (addr) ->
+storeRegisterX = (addr) ->
      memory[addr] = registerX
-     debug "In setRegisterX"
+     debug "In storeRegisterX"
 
-setRegisterY = (addr) ->
+storeRegisterY = (addr) ->
      memory[addr] = registerY
-     debug "In setRegisterY"
+     debug "In storeRegisterY"
 
 addRegisters = () ->
      registerX = registerX + registerY
@@ -68,12 +68,12 @@ jumpAddress = (addr) ->
 
 operands = [{ abbr: "END", params: 0, code: stopProgram, help: "Ends the program"},
             { abbr: "SET", params: 2, code: setMemory,   help: "Sets memory address to value"},
-            { abbr: "LDX", params: 1, code: putRegisterX, help: "Loads a value into X Register"},
-            { abbr: "LDY", params: 1, code: putRegisterY, help: "Loads a value into Y Register"},
-            { abbr: "LAX", params: 1, code: putAddressRegisterX, help: "Loads value from address into X Register"},
-            { abbr: "LAY", params: 1, code: putAddressRegisterY, help: "Loads value from address into Y Register"},
-            { abbr: "SAX", params: 1, code: setRegisterX, help: "Sets address to value in X Register"},
-            { abbr: "SAY", params: 1, code: setRegisterY, help: "Sets address to value in Y Register"},
+            { abbr: "LDX", params: 1, code: loadRegisterX, help: "Loads a value into X Register"},
+            { abbr: "LDY", params: 1, code: loadRegisterY, help: "Loads a value into Y Register"},
+            { abbr: "LAX", params: 1, code: loadAddressRegisterX, help: "Loads value from address into X Register"},
+            { abbr: "LAY", params: 1, code: loadAddressRegisterY, help: "Loads value from address into Y Register"},
+            { abbr: "STX", params: 1, code: storeRegisterX, help: "Stores value in X Register to a memory address"},
+            { abbr: "STY", params: 1, code: storeRegisterY, help: "Stores value in Y Register to a memory address"},
             { abbr: "ADD", params: 0, code: addRegisters, help: "Adds the values in X and Y Registers. Sum in X Register"},
             { abbr: "RND", params: 0, code: randomValue, help: "Puts a random value in X Register"},
             { abbr: "INX", params: 0, code: incrementRegisterX, help: "Increments X Register by 1"}
