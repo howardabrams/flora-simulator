@@ -54,6 +54,7 @@ h1 {
     border-radius: 25px;
     background-color: black;
     color: #6f6;
+    text-transform: uppercase;
 }
 
 #instructions {

@@ -41,6 +41,7 @@ h1 {
     font-family: apple;
     font-size: 18px;
     padding: 8px;
+    border-radius: 8px;
 }
 
 a {
@@ -57,4 +58,23 @@ a {
 
 #info-dialog a {
     background-color: #f5f5dc;
+}
+
+blockquote {
+    border: 2px solid purple;
+    padding: 12px;
+    border-radius: 20px;
+    background-color: #FDE6FF;
+}
+
+code {
+    color: purple;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+pre .ui-icon {
+    background-color: #f5f5dc;
+    float: right;
+    border-radius: 4px;
 }

@@ -7,11 +7,13 @@ showInstructions = ->
         [showInstructionCode(code.abbr, code.help) for code in operands]
 
 loadPage = (url, dest, callback) ->
+        $(dest).html("")
         ha = $("#holding-area")
 
         ha.load(url, null, (data) ->
                 section = $("#holding-area div#content")
-                if section.length == 1
+                if section.length > 0
+                        console.log "Taking content with us... #{url}"
                         section.clone().appendTo(dest).find("h1").empty()
                 else
                         dest.html(data)
@@ -57,9 +59,11 @@ $( ->
                 dest = $(this)
                 loadPage(url, dest, ->
                         $("a", dest).click ->
-                                url = "tutorial/" + $(this).attr("href")
-                                showInfoDialog(url)
+                                showInfoDialog( "tutorial/" + $(this).attr("href") )
                                 return false
-
+                        $("pre", dest).prepend("<span class=\"ui-icon ui-icon-arrowreturnthick-1-w\"></span>")
+                        $("pre .ui-icon").click ->
+                                text = $(this).parents("pre").text()
+                                $("#input", window.parent.frames[0].document).html(text)
                 )
 )

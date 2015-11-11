@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Ada Lovelace</title>
+<title>Turing's Strip of Numbers</title>
 <!-- 2015-11-10 Tue 21:38 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
@@ -137,53 +137,127 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Ada Lovelace</h1>
+<h1 class="title">Turing's Strip of Numbers</h1>
 <p>
-<a href="https://en.wikipedia.org/wiki/Ada_Lovelace">Ada Lovelace</a>, the daughter of <a href="https://en.wikipedia.org/wiki/Lady_Byron">a pious witch</a> and a <a href="https://en.wikipedia.org/wiki/Lord_Byron">rock-and-roll
-vampire</a> (who continues to haunt high school English classes to this
-day), grew up between the worlds of art and mathematics. Perhaps this
-is why she was able see visions of how to program computers long
-before electronic computers were first conceived.
+<a href="sub-turing.html">Alan Turing</a>’s <i>big idea</i> was that computation could be done by a
+monkey and roll of toilet paper:
+</p>
+
+<img src="img/monkey-strip.png"/>
+
+<p>
+Really.
 </p>
 
 <p>
-Ada became fascinated with a <a href="https://en.wikipedia.org/wiki/Difference_Engine">mechanical calculator</a>, thought that a
-type of math she learned from <a href="https://en.wikipedia.org/wiki/Augustus_De_Morgan">one of her teachers</a> could be applied to
-<a href="https://en.wikipedia.org/wiki/Analytical_Engine">early ideas of a mechanical computer</a>. While she was asked to translate
-<a href="https://en.wikipedia.org/wiki/Luigi_Menabrea">another mathematicians’</a> analysis, she added much about what we would
-now call programs that could do <i>computations</i> without the knowing the
-answers first.
+His idea was so good that all of our computers are based on his idea.
 </p>
 
 <p>
-The computer ideas of her time were never built, and she didn’t have
-the opportunity to try out her ideas of her programs on them.  Her
-writing was mostly forgotten, but her ideas did influence our age of
-“modern computing”.
-</p>
-
-<p>
-During WWII, <a href="https://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a> was working on deciphering enemy
-communications and discovered Lovelace’s translation and her
-notes. They helped shape his thinking, and later computers and
-programs have been built on these ideas.
-</p>
-
-<p>
-Further Reading:
+The rules:
 </p>
 
 <ul class="org-ul">
-<li><a href="http://sydneypadua.com/2dgoggles/">Lovelace and Babbage: the graphic novel</a>
+<li>One <i>long</i> strip of paper divided into sections
+(like a square of toilet paper)
 </li>
-<li><a href="http://findingada.com/book/ada-lovelace-victorian-computing-visionary/">Ada Lovelace: Victorian computing visionary</a>
+<li>Each section has a single symbol
 </li>
-<li><a href="http://2machines.com/179463/">The Countess and the Computer Age</a>
+<li>A monkey can only <i>read</i> one square at a time
+</li>
+<li>A monkey can only <i>write</i> (or change) one square at a time
+</li>
+<li>A monkey can only <i>remember</i> one thing at a time
 </li>
 </ul>
+
+<p>
+The monkey does know what the symbols on the paper mean, so that
+the symbols could be commands to tell it what to do.
+</p>
+
+<p>
+Let's use the simulator to load in some numbers into the <i>strip of
+memory</i>.
+</p>
+
+<p>
+First, type in the following into the black "screen":
+</p>
+
+<pre class="example">
+1 2 3 4 5 6
+</pre>
+
+<p>
+Separate each number with spaces, commas, or both.
+</p>
+
+<p>
+Now, press the <b>Load</b> button, to see the numbers show up in the area
+we call "memory". If you enter a lot of numbers, you can use your
+mouse to scroll the memory to the right to see them all.
+</p>
+
+<blockquote>
+<p>
+Since we have 256 memory location cells, they are split on two rows,
+so cells 0 - 127 are on the first row, and 128 - 255 are on the second.
+</p>
+</blockquote>
+
+<p>
+The memory cell in orange is what the monkey, I mean, <i>computer</i>,
+is currently reading. It starts at the first one (the <i>zeroth</i>
+location), but can <i>point</i> to <a href="sub-any-location.html">any location</a> on the strip.
+</p>
+
+<p>
+The computer thinks that some of the numbers are actual numbers, and
+others are <i>commands</i> (also called <i>operators</i>).
+</p>
+
+<p>
+<b>Which are which?</b>
+</p>
+
+<p>
+The number in any cell that is orange is considered a command.
+In this case, the <code>1</code> isn't a <i>one</i>, but a command. Don't worry, about
+what the command is, as we'll get to that soon enough.
+</p>
+
+<p>
+To make the computer <i>do</i> the command that it is currently pointing,
+press the <b>Step</b> button. It doesn't seem to do much except for moving
+the pointer to the <i>fourth</i> memory location.
+</p>
+
+<p>
+<b>Note:</b> On the third row of numbers is a square called <b>Pointer</b>. This
+ is a <i>special cell</i> as the number in there is where the <i>pointer</i> is.
+</p>
+
+<p>
+Press the <b>Step</b> button again, and this time the pointer moves to the
+<i>sixth</i> position (labeled <b>5</b>), and pressing again moves it to the
+<i>eighth</i> postion (labeled <b>7</b>).
+</p>
+
+<p>
+At this point, pressing <b>Step</b> does nothing, because the pointer is
+pointing to a memory cell location that has a <code>0</code> in it, and as a
+command <code>0</code> means to stop running and not do anything more. Our
+"program" has ended without doing much of anything useful.
+</p>
+
+<p>
+Press the <b>Load</b> button will re-read your program and re-set the
+pointer back to <code>0</code>.
+</p>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2015 Nov 08</p>
+<p class="date">Date: 2015 Nov 10</p>
 <p class="author">Author: Howard Abrams</p>
 <p class="date">Created: 2015-11-10 Tue 21:38</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.0.50.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
