@@ -1,0 +1,50 @@
+#+TITLE:  Welcome
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 09
+#+TAGS:   education
+
+*What is this?*
+
+What you see here is a /simulator/ of how a computer works at its
+core.
+
+*Why is this Important?*
+
+How does the computer in your phone work? Did you know your phone has
+a computer? Your phone has more computing power than the computers we
+used to get astronauts on the Moon!
+
+Strip away the icons and other layers, and you'll find a simpler *core*.
+When I was a kid, we programmed the computer's core, but now that core
+is inaccessible.
+
+So I built a /simulator/ that pretends to be one of these early
+computer cores (called a /central processing unit/).
+
+*How do I learn?*
+
+Each section can be opened by clicking on its header below. Like a
+book, you will only see one section at a time. Clicking on darker words,
+[[file:sub-sample.org][like these]], will give you background and interesting stories.
+
+Each section has code that you can copy and paste into the simulator
+on the other side of the screen. The "bar" between can be moved if you
+want either the simulator or this tutorial larger.
+
+Sounds interesting? Click to open the next section!
+
+#+BEGIN_QUOTE
+  *Technical Note:* The simulator roughly behaves like early 8-bit
+   CPUs from the 1970s, like [[file:sub-6502.org][the 6502]] (hence the reason why this system
+   resembles the original Apple ][ computer). It is /not/ a full
+   representation (at least, not yet), as I felt it was more important
+   to be easier and simpler.
+
+  If you are interested in learning the 6502 assembly language,
+  check out [[http://skilldrick.github.io/easy6502/][Nick Morgan's Online Emulator]].
+
+  If you are interested in expanding this project, it is all open
+  source located at http://github.com/howardabrams/flora-simulator
+  and the [[https://github.com/howardabrams/flora-simulator/blob/master/ada.coffee][computer emulator]] is written in a language called [[http://www.coffeescript.org][CoffeeScript]].
+#+END_QUOTE

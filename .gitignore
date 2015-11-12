@@ -1,4 +1,7 @@
 js/lodash.js
 fonts
 ui
-js
+img/monkey-strip-binary.*
+/js/js.cookie.js
+/js/ada.js
+/js/tutorial.js

@@ -1,0 +1,175 @@
+#+TITLE:  Binary Numbers
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 10
+#+OPTIONS: toc:nil ':t ^:nil num:nil
+
+What is the difference between a /number/ and a /numeral/?
+
+We say that a numeral is a /symbol/ for a number.
+
+  | Number | Indo-Arabic | Chinese | Thai | Hebrew | Roman |
+  |--------+-------------+---------+------+--------+-------|
+  | Zero   |           0 | 零      | ๐    |        |       |
+  | One    |           1 | 一      | ๑    | א      | I     |
+  | Two    |           2 | 二      | ๒    | ב      | II    |
+  | Three  |           3 | 三      | ๓    | ג      | III   |
+  | Four   |           4 | 四      | ๔    | ד      | IV    |
+  | Five   |           5 | 五      | ๕    | ה      | V     |
+
+While many cultures came up with symbols for numbers, the one we use
+now is /positional/. Its advantages has made it popular.
+
+Why do we have 10 symbols? Could we use others?
+
+* Our New System
+
+Let's invent a new numeral system:
+
+  | Number | Numeral |
+  |--------+---------|
+  | Zero   | ☉       |
+  | One    | †       |
+  | Two    | ♒       |
+  | Three  | △       |
+  | Four   | ✦       |
+
+What if this is all the symbols we had?
+
+Five numerals isn't enough? Well, the Mayans who lived in Central
+America had 20 numerals, so we don't /have/ to always have 10.
+(If you hold out your hands, I bet you can guess why we have ten numerals).
+
+* Writing Five
+
+In our table above, we can easily write the numbers from zero to four,
+since we have a symbol for each.
+
+How would we write /five/?
+
+We don't have a symbol for /ten/, so we just use a /1/ in the /tens/
+place.
+
+We will just have to have a /fives/ place in our system.
+
+  | Number | Fives | Ones | Numeral |
+  |--------+-------+------+---------|
+  | Five   | †     | ☉    | †☉      |
+  | Six    | †     | †    | ††      |
+  | Seven  | †     | ♒    | †♒      |
+  | Eight  | †     | △    | †△      |
+  | Nine   | †     | ✦    | †✦      |
+
+  The number /seven/ is /one/ ✕ /five/ + /two/ ✕ /one/.
+
+  If your head hurts, it probably did when you were in kindergarten
+  learning about the /tens/ and /hundreds/ place, right?
+
+  Since you're smart, we'll keep going...
+
+* Writing Eleven
+
+  What about representing /ten/? Since /ten/ is really /two/ × /five/,
+  it is still easy:
+
+  | Number   | Fives | Ones | Numeral |
+  |----------+-------+------+---------|
+  | Ten      | ♒     | ☉    | ♒☉      |
+  | Eleven   | ♒     | †    | ♒†      |
+  | Twelve   | ♒     | ♒    | ♒♒      |
+  | Thirteen | ♒     | △    | ♒△      |
+  | Fourteen | ♒     | ✦    | ♒✦      |
+
+  So /thirteen/ is /two/ ✕ /five/ + /three/ ✕ /one/.
+
+* Writing Twenty-five
+
+  This works until we get to /twenty-four/.
+
+  Which is ✦✦ ... /four/ ✕ /five/ + /four/ ✕ /one/
+
+  How would we represent /twenty-five/?
+
+  /One hundred/ is a new positional place in our system because it is
+  /ten/ × /ten/.
+
+  Since ours is /based/ on /five/, we would have a new position for it:
+
+  | /Twenty-fives/ | /Fives/ | /Ones/ |
+  |----------------+---------+--------|
+  | †              | ☉       | ☉      |
+
+  In other words: /one/ ✕ /twenty-five/ + /zero/ ✕ /five/ + /zero/ ✕ /one/
+
+  So /twenty-five/ is †☉☉, and /twenty-six/ is? Yup: †☉†
+
+  What about writing /eighty-nine/?
+
+  This is /75/ + /10/ + /4/:
+
+  | /Twenty-fives/ | /Fives/ | /Ones/ |
+  |----------------+---------+--------|
+  | △ (3)          | ♒ (2)   | ✦ (4)   |
+
+  Written: △♒✦
+
+* Binary Numerals
+
+  What if we only had /two numerals/!? Crazy, huh?
+
+  Let's redo our table with new symbols:
+
+   | Number | Numeral |
+   |--------+---------|
+   | Zero   | ○       |
+   | One    | ●       |
+
+  Tedious, but simple enough now:
+
+  | Number | Eight | Four | Two | Ones | Number |
+  |--------+-------+------+-----+------+--------|
+  | Zero   |       |      |     | ○    | ○      |
+  | One    |       |      |     | ●    | ●      |
+  | Two    |       |      | ●   | ○    | ●○     |
+  | Three  |       |      | ●   | ●    | ●●     |
+  | Four   |       | ●    | ○   | ○    | ●○     |
+  | Five   |       | ●    | ○   | ●    | ●○●    |
+  | Six    |       | ●    | ●   | ○    | ●●○    |
+  | Seven  |       | ●    | ●   | ●    | ●●●    |
+  | Eight  | ●     | ○    | ○   | ○    | ●○○○   |
+  | Nine   | ●     | ○    | ○   | ●    | ●○○●   |
+  | Ten    | ●     | ○    | ●   | ○    | ●○●○   |
+
+  The number /ten/ is /1/ ✕ /8/ + /1/ ✕ /2/.
+
+  Why is this important? Computers only have two digits ... an
+  electrical current that is on, and missing a current that is off.
+
+  We call numbers represented with only two symbols, *binary*.
+
+  However, since we don’t have an empty and filled in circles on most
+  keyboards, we just reuse =0= and =1=:
+
+  | Number | Eight | Four | Two | Ones | Number |
+  |--------+-------+------+-----+------+--------|
+  | Zero   |       |      |     | =0=  | =0=    |
+  | One    |       |      |     | =1=  | =1=    |
+  | Two    |       |      | =1= | =0=  | =10=   |
+  | Three  |       |      | =1= | =1=  | =11=   |
+  | Four   |       | =1=  | =0= | =0=  | =10=   |
+  | Five   |       | =1=  | =0= | =1=  | =101=  |
+  | Six    |       | =1=  | =1= | =0=  | =110=  |
+  | Seven  |       | =1=  | =1= | =1=  | =111=  |
+  | Eight  | =1=   | =0=  | =0= | =0=  | =1000= |
+  | Nine   | =1=   | =0=  | =0= | =1=  | =1001= |
+  | Ten    | =1=   | =0=  | =1= | =0=  | =1010= |
+
+  Telling the computer that the number =1000= is eight instead of one
+  thousand is another story.
+
+  Now, you will be able to understand the popular joke:
+
+  #+BEGIN_QUOTE
+  There are only =10= types of people in the world,
+  Those who understand binary and those that who don’t.
+  #+END_QUOTE

@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Outline</title>
-<!-- 2015-11-11 Wed 21:27 -->
+<!-- 2015-11-11 Wed 21:26 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ada Lovelace</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Howard Abrams" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -58,15 +65,14 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -88,6 +94,22 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
+   <style type="text/css">
+    body { font-family: 'Lucida Grande', sans-serif;
+           margin: 20px;
+         }
+</style>
+
+   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+   <style type='text/css'>
+      body {
+         font-family: 'Source Sans Pro', sans-serif;
+      }
+      pre, code {
+         font-family: 'Source Code Pro', monospace;
+      }
+   </style>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -137,22 +159,47 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Outline</h1>
+<h1 class="title">Ada Lovelace</h1>
 <p>
-Let's just jam some notes&#x2026;
+<a href="https://en.wikipedia.org/wiki/Ada_Lovelace">Ada Lovelace</a>, the daughter of <a href="https://en.wikipedia.org/wiki/Lady_Byron">a pious witch</a> and a <a href="https://en.wikipedia.org/wiki/Lord_Byron">rock-and-roll
+vampire</a> (who continues to haunt high school English classes to this
+day), grew up between the worlds of art and mathematics. Perhaps this
+is why she was able see visions of how to program computers long
+before electronic computers were first conceived.
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Introduction</h2>
-<div class="outline-text-2" id="text-1">
 <p>
-      LDX 6
-LOOP: INX
-      SAX #81
-      JMP LOOP
+Ada became fascinated with a <a href="https://en.wikipedia.org/wiki/Difference_Engine">mechanical calculator</a>, thought that a
+type of math she learned from <a href="https://en.wikipedia.org/wiki/Augustus_De_Morgan">one of her teachers</a> could be applied to
+<a href="https://en.wikipedia.org/wiki/Analytical_Engine">early ideas of a mechanical computer</a>. While she was asked to translate
+<a href="https://en.wikipedia.org/wiki/Luigi_Menabrea">another mathematicians’</a> analysis, she added much about what we would
+now call programs that could do <i>computations</i> without the knowing the
+answers first.
 </p>
-</div>
-</div>
+
+<p>
+The computer ideas of her time were never built, and she didn’t have
+the opportunity to try out her ideas of her programs on them.  Her
+writing was mostly forgotten, but her ideas did influence our age of
+“modern computing”.
+</p>
+
+<p>
+During WWII, <a href="https://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a> was working on deciphering enemy
+communications and discovered Lovelace’s translation and her
+notes. They helped shape his thinking, and later computers and
+programs have been built on these ideas.
+</p>
+
+<p>
+Further Reading:
+</p>
+
+<ul class="org-ul">
+<li><a href="http://sydneypadua.com/2dgoggles/">Lovelace and Babbage: the graphic novel</a></li>
+<li><a href="http://findingada.com/book/ada-lovelace-victorian-computing-visionary/">Ada Lovelace: Victorian computing visionary</a></li>
+<li><a href="http://2machines.com/179463/">The Countess and the Computer Age</a></li>
+</ul>
 </div>
 </body>
 </html>

@@ -1,0 +1,68 @@
+#+TITLE:  The Limits of our Computer
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 10
+
+Erase your program and type the following (or, you can click the arrow
+icon on the right side of the box below to automatically copy it into
+the simulator):
+
+#+BEGIN_EXAMPLE
+260
+#+END_EXAMPLE
+
+In this case, don't separate the numbers with spaces, as we're
+playing around. Press the *Load* button, and our "program" places a
+=4= in the first memory location and that is all.
+
+*Why?*
+
+Like early computers from the 1970's and 80's, our computer is limited
+to numbers less than 256. A very odd number, but not if you think like
+a computer.
+
+Computers think in [[file:sub-binary.org][binary numbers]], so all numbers are based on /two/.
+
+And:
+
+    2 x 2 x 2 x 2 x 2 x 2 x 2 x 2 = 256
+
+That is 2 times itself /eight/ times, or /two/ to the power of
+/eight/. We write this in math as 2^8. You may have heard of 8-bit? No
+matter, it was [[file:sub-early-limits.org][just a limitation of these early computers]].
+
+*Why 4?*
+
+You might think that putting 260 into a cell that can only hold
+numbers less than 256 would leave 255, but computer cells /roll over/.
+
+The computer fills the cell to =255=, but it still has more to go, so
+it rolls back around to =0= for the 256, =1= for the 257, =2= for the
+258 ... eventually leaving =4= in the memory cell location.
+
+Before we move on, let's try out another problem. Let's put the
+following program:
+
+#+BEGIN_EXAMPLE
+#A B #C
+#+END_EXAMPLE
+
+When you press *Load*, you will see that our first memory cell has
+=10=, the second has =0=, and the third has =12=. What is going on
+here?
+
+Well, the =B= is clearly not a number, so putting =0= in the second
+memory location would be expected, but what about the /hashtags/?
+
+=#A= is a number... just not in our normal decimal format. It just
+uses a base of 16, instead of 10. This is called [[file:sub-hexadecimal.org][hexadecimal]], and
+since 16 is a power of two (2^4), it is sometimes easier to use when
+you are dealing with computers.
+
+If you click the switch that shows: *Dec <-> Hex* below the *Step*
+button, you will see all the numbers change between decimal (base 10)
+and hexadecimal (base 16). Notice that the second strip of memory is
+labeled =80= which seems a little nicer instead of the original
+decimal value of =128=.
+
+I think it is time to actually program this, so let's move to the next lesson.

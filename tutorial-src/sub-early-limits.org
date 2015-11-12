@@ -1,0 +1,23 @@
+#+TITLE:  Early Limitations
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 10
+#+TAGS:
+
+If your computer can only deal with 8-bit numbers (less than 256), how
+can you do anything real?
+
+Easy. We /combine/ two or more 8-bit numbers to form larger numbers.
+Two 8-bit numbers is 2^16, or 65,536. Much higher. This was the upper
+limit for our memory strip in the 1980's.
+
+What if combine /three/ 8-bit numbers? Now we can work with 2^{3x8} =
+2^24 = 16,777,216 numbers.
+
+Most computers now think with brains that can handle numbers that
+combine /four/ 8-bit numbers, or 2^{4x8} = 2^64 =
+18,446,744,073,709,551,616 ... which is /good enough/ for now.
+
+Interesting that just by adding one more small 8-bit number, can jump
+to huge numbers. This reminds me of the story of [[http://www.singularitysymposium.com/exponential-growth.html][The Rice on a Chess Board]],
+or the Legend of Paal Paysam.

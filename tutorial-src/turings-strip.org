@@ -1,0 +1,78 @@
+#+TITLE:  Turing's Strip of Numbers
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 10
+#+TAGS:   education
+
+[[file:sub-turing.org][Alan Turing]]’s /big idea/ was that computation could be done by a
+monkey and roll of toilet paper:
+
+#+HTML: <img src="img/monkey-strip.png"/>
+
+Really.
+
+His idea was so good that all of our computers are based on his idea.
+
+The rules:
+
+  - One /long/ strip of paper divided into sections
+    (like a square of toilet paper)
+  - Each section has a single symbol
+  - A monkey can only /read/ one square at a time
+  - A monkey can only /write/ (or change) one square at a time
+  - A monkey can only /remember/ one thing at a time
+
+The monkey does know what the symbols on the paper mean, so that
+the symbols could be commands to tell it what to do.
+
+Let's use the simulator to load in some numbers into the /strip of
+memory/.
+
+First, type in the following into the black "screen":
+
+#+BEGIN_EXAMPLE
+1 2 3 4 5 6
+#+END_EXAMPLE
+
+Separate each number with spaces, commas, or both.
+
+Now, press the *Load* button, to see the numbers show up in the area
+we call "memory". If you enter a lot of numbers, you can use your
+mouse to scroll the memory to the right to see them all.
+
+#+BEGIN_QUOTE
+Since we have 256 memory location cells, they are split on two rows,
+so cells 0 - 127 are on the first row, and 128 - 255 are on the second.
+#+END_QUOTE
+
+The memory cell in orange is what the monkey, I mean, /computer/,
+is currently reading. It starts at the first one (the /zeroth/
+location), but can /point/ to [[file:sub-any-location.org][any location]] on the strip.
+
+The computer thinks that some of the numbers are actual numbers, and
+others are /commands/ (also called /instructions/).
+
+*Which are which?*
+
+The number in any cell that is orange is considered a command.
+In this case, the =1= isn't a /one/, but a command. Don't worry, about
+what the command is, as we'll get to that soon enough.
+
+To make the computer /do/ the command that it is currently pointing,
+press the *Step* button. It doesn't seem to do much except for moving
+the pointer to the /fourth/ memory location.
+
+*Note:* On the third row of numbers is a square called *Pointer*. This
+ is a /special cell/ as the number in there is where the /pointer/ is.
+
+Press the *Step* button again, and this time the pointer moves to the
+/sixth/ position (labeled *5*), and pressing again moves it to the
+/eighth/ postion (labeled *7*).
+
+At this point, pressing *Step* does nothing, because the pointer is
+pointing to a memory cell location that has a =0= in it, and as a
+command =0= means to stop running and not do anything more. Our
+"program" has ended without doing much of anything useful.
+
+Press the *Load* button will re-read your program and re-set the
+pointer back to =0=.

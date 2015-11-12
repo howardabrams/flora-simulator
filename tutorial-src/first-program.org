@@ -1,0 +1,91 @@
+#+TITLE:  Our First Program
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 10
+#+OPTIONS: toc:nil ':t ^:nil num:nil
+
+Our first /real/ program will be quite simple: turn on a light.
+(Didn’t realize the four black circles at the bottom of the
+simulator were lights?)
+
+Type the following program:
+
+#+BEGIN_EXAMPLE
+1 129 1
+#+END_EXAMPLE
+
+Click the *Load* button, and when you click the *Step* button, you
+will see that the first light turned on, showing a red color.
+
+The command, =1= is called =SET=, and it looks at the next memory
+location for the number of another memory cell (in this case, =129=),
+and changes whatever value is there with the third memory location (in
+this case, we have another =1= value).
+
+Putting =1= in memory location =129= turns the first light to red.
+
+Change the value (not the command) to =2=, so you program should look
+like this:
+
+#+BEGIN_EXAMPLE
+1 129 2
+#+END_EXAMPLE
+
+Press *Load* and the light turns off (since the memory location =129=
+now has a =0=. Press *Step* to run this new program command. What
+color did the light turn on this time? Feel free to try different
+values and see if you can come up with the pattern.
+
+** Command Mnemonics
+
+Trying to remember that command =1= sets a memory location is
+annoying, but remembering the number for every command possible can be
+really taxing on a human brain.
+
+Our loader will convert some /words/ into command numbers. For
+instance, our previous program could be written as:
+
+#+BEGIN_EXAMPLE
+SET 129 2
+#+END_EXAMPLE
+
+Which is much more clear. Put that program into the system, and press
+the *Load* button. What is in memory location =0=? That's right, it is
+=1= since the =SET= command is automatically converted to a =1= when
+it is read and stored into the memory cell.
+
+From now on, we will put all commands as a three-letter command (often
+abbreviated to make it fit in three letters).
+
+** Hexadecimal
+
+Click the *Dec <-> Hex* button and you will see that all values in our
+memory change from decimal numbers that you are used to, to [[file:sub-hexadecimal.org][hexadecimal values]]
+that may look a little strange. Hexadecimal numbers are magical, and if you
+are not careful, you can use them to curse other people. This is why
+we call them /hex/ numbers.
+
+Since our computers are based on [[file:sub-binary.org][binary numbers]] (and are also highly
+resistant to magical energies), we often find it easier to program
+with /hex/ numbers.
+
+Notice that our memory cell location =129= in /hex/ is =81=, which
+makes more sense since our first light should be tied to memory
+location with a one in it, don't you think?
+
+In our program, we can specify /hex/ numbers by prefixing them with a /hashtag/.
+The following program is exactly the same as our previous one:
+
+#+BEGIN_EXAMPLE
+SET #81 2
+#+END_EXAMPLE
+
+Press *Load* and you will see that nothing really changed.
+
+You can type part of your program with either /hex/ numbers (if
+prefixed with a hashtag) or decimal numbers, no matter what the *Dec
+<-> Hex* button reads.
+
+Well, we've not written the same program three times in three
+different ways. I think it must be time to write a more interesting
+program.

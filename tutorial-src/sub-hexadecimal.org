@@ -1,0 +1,44 @@
+#+TITLE:  Hexadecimal Numbers
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 10
+
+Computers like numbers in base 2 ... or binary. But typing the number
+27 in binary is: =11011= ... quite tedious. However, *decimal notation*
+(a number system with ten symbols that we use all the time), isn’t
+good for computers since ten isn't based on two.
+
+We need a number system for both computers and people. This is why you
+may run across *hexadecimal* which uses /sixteen/ symbols:
+
+  | Number                     | Sixteen | Ones | Number |
+  |----------------------------+---------+------+--------|
+  | Zero                       |         | =0=  | =0=    |
+  | One                        |         | =1=  | =1=    |
+  | Two                        |         | =2=  | =2=    |
+  | Three                      |         | =3=  | =3=    |
+  | Four                       |         | =4=  | =4=    |
+  | Five                       |         | =5=  | =5=    |
+  | Six                        |         | =6=  | =6=    |
+  | Seven                      |         | =7=  | =7=    |
+  | Eight                      |         | =8=  | =8=    |
+  | Nine                       |         | =9=  | =9=    |
+  | Ten                        |         | =A=  | =A=    |
+  | Eleven                     |         | =B=  | =B=    |
+  | Twelve                     |         | =C=  | =C=    |
+  | Thirteen                   |         | =D=  | =D=    |
+  | Fourteen                   |         | =E=  | =E=    |
+  | Fifteen                    |         | =F=  | =F=    |
+  | Sixteen                    | =1=     | =0=  | =10=   |
+  | Seventeen                  | =1=     | =1=  | =11=   |
+  | Eighteen                   | =1=     | =2=  | =12=   |
+  | Nineteen                   | =1=     | =3=  | =13=   |
+  | Twenty                     | =1=     | =4=  | =14=   |
+  | Hundred                    | =6=     | =4=  | =64=   |
+  | Two Hundred                | =C=     | =8=  | =C8=   |
+  | Two Hundred and Fifty-five | =F=     | =F=  | =FF=   |
+
+/One Hundred/ is =64= because six ✕ sixteen is ninety-six plus four is one hundred.
+
+Two hundred is =C8= because =C= is /twelve/ and twelve ✕ sixteen is
+one-hundred and ninety-two (just add eight more to get two-hundred).

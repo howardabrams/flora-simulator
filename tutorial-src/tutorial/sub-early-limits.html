@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Outline</title>
-<!-- 2015-11-11 Wed 21:27 -->
+<!-- 2015-11-11 Wed 21:26 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Early Limitations</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Howard Abrams" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -58,15 +65,14 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -88,6 +94,22 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
+   <style type="text/css">
+    body { font-family: 'Lucida Grande', sans-serif;
+           margin: 20px;
+         }
+</style>
+
+   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+   <style type='text/css'>
+      body {
+         font-family: 'Source Sans Pro', sans-serif;
+      }
+      pre, code {
+         font-family: 'Source Code Pro', monospace;
+      }
+   </style>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -137,22 +159,34 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Outline</h1>
+<h1 class="title">Early Limitations</h1>
 <p>
-Let's just jam some notes&#x2026;
+If your computer can only deal with 8-bit numbers (less than 256), how
+can you do anything real?
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Introduction</h2>
-<div class="outline-text-2" id="text-1">
 <p>
-      LDX 6
-LOOP: INX
-      SAX #81
-      JMP LOOP
+Easy. We <i>combine</i> two or more 8-bit numbers to form larger numbers.
+Two 8-bit numbers is 2<sup>16</sup>, or 65,536. Much higher. This was the upper
+limit for our memory strip in the 1980's.
 </p>
-</div>
-</div>
+
+<p>
+What if combine <i>three</i> 8-bit numbers? Now we can work with 2<sup>3x8</sup> =
+2<sup>24</sup> = 16,777,216 numbers.
+</p>
+
+<p>
+Most computers now think with brains that can handle numbers that
+combine <i>four</i> 8-bit numbers, or 2<sup>4x8</sup> = 2<sup>64</sup> =
+18,446,744,073,709,551,616 &#x2026; which is <i>good enough</i> for now.
+</p>
+
+<p>
+Interesting that just by adding one more small 8-bit number, can jump
+to huge numbers. This reminds me of the story of <a href="http://www.singularitysymposium.com/exponential-growth.html">The Rice on a Chess Board</a>,
+or the Legend of Paal Paysam.
+</p>
 </div>
 </body>
 </html>

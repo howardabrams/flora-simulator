@@ -1,0 +1,99 @@
+#+TITLE:  Looping Around
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 11
+
+In our previous lesson, we put the value =1= and =2= into memory
+location =129= in order to have the first light show different
+colors. What if we wanted to go through all the possible numbers so
+that we can step through all values to see what colors will show.
+
+I suppose we /could/ do something like:
+
+#+BEGIN_EXAMPLE
+SET 129 1
+SET 129 2
+SET 129 3
+#+END_EXAMPLE
+
+But this is too much typing. We need a way to add one to the value.
+Doing math requires a /register/. Remember the monkey who could think
+of one thing at a time? Well, what the monkey can remember is called a
+/register/.
+
+Our monkey, er... computer, is very smart. It can remember /three/
+things:
+
+  - X Register
+  - Y Register
+  - Z Register
+
+While you really only need /one/ register, having more registers is easier.
+
+Here is a description of what we want our program to do:
+
+  1. Start off with some initial value in a register
+  2. Put the value from the register into memory =129=
+  3. Increment the value in the register
+  4. Repeat step 2...
+
+Here is the first three steps of our program:
+
+#+BEGIN_EXAMPLE
+LDX 0    ; Put 0 in X Register
+STX #81  ; Store X in First Light
+INX      ; Increment value in X
+#+END_EXAMPLE
+
+You may be wondering about all the words following the semicolons.
+Those are /comments/, and let us leave notes for ourselves. The
+simulator ignores all words following a semicolon, so we can write
+anything we want.
+
+The =LDX= looks at the next value, and puts that in the X Register.
+When we *Load* our program, the *X Register* is already set to 0, but
+this isn't always the case with computers, so we generally want to set
+our values when we start.
+
+The =STX= stores the value in the X register in some memory
+address. In this case, our old friend, =#81= ... the memory location
+that controls the first light bulb's color.
+
+The =INX= increments the value in the X register.
+
+Pretty straight forward, eh? Now that the X register is incremented,
+let's /jump/ back in our program to where we can store the X
+register's contents back into our memory location.
+
+For this, we use the =JMP= instruction. It allows us to jump to any
+point in memory by setting a new value in our *Pointer Register*.
+
+But what is the address we want to jump to? Well, if we click the
+*Load* button, we will see our program in memory:
+
+  0. [@0] has a =2=, which is the instruction number for =LDX=
+  1. has a =0=, which is the value to store in the X register
+  2. has a =6=, which is the instruction number for =STX=
+  3. has a =129=, which is the memory address for the light
+  4. has a =10=, the instruction number for =INX=
+
+So, clearly, we need to /jump/ to memory location =2=!
+
+Here is our updated program:
+
+#+BEGIN_EXAMPLE
+LDX 0    ; Put 0 in X Register
+STX #81  ; Store X Reg in Light
+INX      ; Increment X Register
+JMP 2    ; Loop to store X reg
+#+END_EXAMPLE
+
+Click the *Load* and then continually click the *Step* to see if you
+can figure out the pattern for what values choose the color for the
+light.
+
+By the way, jumping back to where we've already been, is called /looping/.
+
+Our programs are getting more interesting as we learn more of the
+instructions that are available. But that =JMP= feature isn't so nice.
+In the next section, we'll learn how to make that easier.

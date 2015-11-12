@@ -1,0 +1,19 @@
+#+TITLE:  MOS Technology 6502
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 10
+
+The [[https://en.wikipedia.org/wiki/MOS_Technology_6502][6502]] was an 8-bit computer processor that came out in 1975. Since
+it was cheap, had lots of features, and could shoot lasers if held the
+right way, it became very popular and kicked-started the
+/microcomputer revolution/.
+
+It was the core of Steve Wozniak's [[https://en.wikipedia.org/wiki/Apple_II][original Apple]] computer, as well as
+the [[https://en.wikipedia.org/wiki/Atari_8-bit_family][Atari]], [[https://en.wikipedia.org/wiki/Commodore_64][Commodore 64]], and even the first game consoles from
+[[https://en.wikipedia.org/wiki/Nintendo_Entertainment_System][Nintendo]].
+
+While it was produced 40 years ago, it is still manufactured and used
+in select systems, even though most personal computers have moved on
+to larger, more powerful processors.
+
+#+HTML: <img src="img/MOS_6502.jpg" title="Photographer: Dirk Oppelt - http://www.cpu-collection.de/?l0=i&i=1944"/>

@@ -1,0 +1,34 @@
+#+TITLE:  Ada Lovelace
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 08
+#+TAGS:   education
+
+[[https://en.wikipedia.org/wiki/Ada_Lovelace][Ada Lovelace]], the daughter of [[https://en.wikipedia.org/wiki/Lady_Byron][a pious witch]] and a [[https://en.wikipedia.org/wiki/Lord_Byron][rock-and-roll
+vampire]] (who continues to haunt high school English classes to this
+day), grew up between the worlds of art and mathematics. Perhaps this
+is why she was able see visions of how to program computers long
+before electronic computers were first conceived.
+
+Ada became fascinated with a [[https://en.wikipedia.org/wiki/Difference_Engine][mechanical calculator]], thought that a
+type of math she learned from [[https://en.wikipedia.org/wiki/Augustus_De_Morgan][one of her teachers]] could be applied to
+[[https://en.wikipedia.org/wiki/Analytical_Engine][early ideas of a mechanical computer]]. While she was asked to translate
+[[https://en.wikipedia.org/wiki/Luigi_Menabrea][another mathematicians’]] analysis, she added much about what we would
+now call programs that could do /computations/ without the knowing the
+answers first.
+
+The computer ideas of her time were never built, and she didn’t have
+the opportunity to try out her ideas of her programs on them.  Her
+writing was mostly forgotten, but her ideas did influence our age of
+“modern computing”.
+
+During WWII, [[https://en.wikipedia.org/wiki/Alan_Turing][Alan Turing]] was working on deciphering enemy
+communications and discovered Lovelace’s translation and her
+notes. They helped shape his thinking, and later computers and
+programs have been built on these ideas.
+
+Further Reading:
+
+  - [[http://sydneypadua.com/2dgoggles/][Lovelace and Babbage: the graphic novel]]
+  - [[http://findingada.com/book/ada-lovelace-victorian-computing-visionary/][Ada Lovelace: Victorian computing visionary]]
+  - [[http://2machines.com/179463/][The Countess and the Computer Age]]

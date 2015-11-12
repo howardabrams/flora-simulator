@@ -1,0 +1,34 @@
+#+TITLE:  Alan Turing
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 09
+#+TAGS:   education
+
+[[https://en.wikipedia.org/wiki/Alan_Turing][Alan Turing]] was a robotic time-traveler who traveled back in time to
+murder Hilter. After his ship crashed landed in Britain, he decided to
+help by breaking the encrypted Nazi messages sent to their submarines.
+
+While that story may not be true, it seems to be the only explanation
+of his brilliance and ability of giving us a vision of [[https://en.wikipedia.org/wiki/Turing_machine][the future of
+computers]]. Sure, he was inspired after studying the mystical writings
+of [[http://www.google.com/doodles/ada-lovelaces-197th-birthday][Ada Lovelace]], and other mathematicians.
+
+After finishing a long run, he lay in a meadow, and saw a vision of a
+long strip of tape divided into squares (think of a roll of toilet
+paper). Each square had a symbol that could either be a command or
+some /data/ (like a number). A reader could only see the value on one
+square at a time, but it could remember /one other thing/, which is
+called the "state". By grouping squares together, we could actually
+simplify down to just /two symbols/: a 1 and 0 (or /on/ and /off/),
+which is all a computer can use (see [[http://www.google.com/doodles/alan-turings-100th-birthday][this cool animation of the machine in action]]).
+
+What did his vision solve? /Can reasoning be reduced to computation/.
+What this means, is if you can think of some question, we can use his
+/machine/ to figure it out. All computers have been built on his ideas.
+
+*Further Research:*
+
+  - [[http://www.bbc.co.uk/timelines/z8bgr82][Timeline of Alan Turing's Life]]
+  - [[http://www.pbs.org/newshour/updates/8-things-didnt-know-alan-turing/][8 Things you Didn't Know about Alan Turing]]
+  - [[http://www.radiolab.org/story/194047-real-turing-machine/][Video of a Turing Machine]]
+  - [[http://www.turing.org.uk/][Alan Turing: The Enigma]]

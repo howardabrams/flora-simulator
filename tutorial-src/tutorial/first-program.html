@@ -6,7 +6,7 @@
 <!-- 2015-11-11 Wed 21:26 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Limits of our Computer</title>
+<title>Our First Program</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Howard Abrams" />
 <style type="text/css">
@@ -159,104 +159,134 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">The Limits of our Computer</h1>
+<h1 class="title">Our First Program</h1>
 <p>
-Erase your program and type the following (or, you can click the arrow
-icon on the right side of the box below to automatically copy it into
-the simulator):
+Our first <i>real</i> program will be quite simple: turn on a light.
+(Didn’t realize that the four black circles at the bottom of the
+simulator were lights?)
+</p>
+
+<p>
+Type the following program:
 </p>
 
 <pre class="example">
-260
+1 129 1
 </pre>
 
 <p>
-In this case, don't separate the numbers with spaces, as we're
-playing around. Press the <b>Load</b> button, and our "program" places a
-<code>4</code> in the first memory location and that is all.
+Click the <b>Load</b> button, and when you click the <b>Step</b> button, you
+will see that the first light turned on, showing a red color.
 </p>
 
 <p>
-<b>Why?</b>
+The command, <code>1</code> is called <code>SET</code>, and it looks at the next memory
+location for the number of another memory cell (in this case, <code>129</code>),
+and changes whatever value is there with the third memory location (in
+this case, we have another <code>1</code> value).
 </p>
 
 <p>
-Like early computers from the 1970's and 80's, our computer is limited
-to numbers less than 256. A very odd number, but not if you think like
-a computer.
+Putting <code>1</code> in memory location <code>129</code> turns the first light to red.
 </p>
 
 <p>
-Computers think in <a href="sub-binary.html">binary numbers</a>, so all numbers are based on <i>two</i>.
-</p>
-
-<p>
-And:
-</p>
-
-<p>
-2 x 2 x 2 x 2 x 2 x 2 x 2 x 2 = 256
-</p>
-
-<p>
-That is 2 times itself <i>eight</i> times, or <i>two</i> to the power of
-<i>eight</i>. We write this in math as 2<sup>8</sup>. You may have heard of 8-bit? No
-matter, it was <a href="sub-early-limits.html">just a limitation of these early computers</a>.
-</p>
-
-<p>
-<b>Why 4?</b>
-</p>
-
-<p>
-You might think that putting 260 into a cell that can only hold
-numbers less than 256 would leave 255, but computer cells <i>roll over</i>.
-</p>
-
-<p>
-The computer fills the cell to <code>255</code>, but it still has more to go, so
-it rolls back around to <code>0</code> for the 256, <code>1</code> for the 257, <code>2</code> for the
-258 &#x2026; eventually leaving <code>4</code> in the memory cell location.
-</p>
-
-<p>
-Before we move on, let's try out another problem. Let's put the
-following program:
+Change the value (not the command) to <code>2</code>, so you program should look
+like this:
 </p>
 
 <pre class="example">
-#A B #C
+1 129 2
 </pre>
 
 <p>
-When you press <b>Load</b>, you will see that our first memory cell has
-<code>10</code>, the second has <code>0</code>, and the third has <code>12</code>. What is going on
-here?
+Press <b>Load</b> and the light turns off (since the memory location <code>129</code>
+now has a <code>0</code>. Press <b>Step</b> to run this new program command. What
+color did the light turn on this time? Feel free to try different
+values and see if you can come up with the pattern.
+</p>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Command Mnemonics</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<p>
+Trying to remember that command <code>1</code> sets a memory location is
+annoying, but remembering the number for every command possible can be
+really taxing on a human brain.
 </p>
 
 <p>
-Well, the <code>B</code> is clearly not a number, so putting <code>0</code> in the second
-memory location would be expected, but what about the <i>hashtags</i>?
+Our loader will convert some <i>words</i> into command numbers. For
+instance, our previous program could be written as:
+</p>
+
+<pre class="example">
+SET 129 2
+</pre>
+
+<p>
+Which is much more clear. Put that program into the system, and press
+the <b>Load</b> button. What is in memory location <code>0</code>? That&rsquo;s right, it is
+<code>1</code> since the <code>SET</code> command is automatically converted to a <code>1</code> when
+it is read and stored into the memory cell.
 </p>
 
 <p>
-<code>#A</code> is a number&#x2026; just not in our normal decimal format. It just
-uses a base of 16, instead of 10. This is called <a href="sub-hexadecimal.html">hexadecimal</a>, and
-since 16 is a power of two (2<sup>4</sup>), it is sometimes easier to use when
-you are dealing with computers.
+From now on, we will put all commands as a three-letter command (often
+abbreviated to make it fit in three letters).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Hexadecimal</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+<p>
+Click the <b>Dec &lt;-&gt; Hex</b> button and you will see that all values in our
+memory change from decimal numbers that you are used to, to <a href="sub-hexadecimal.html">hexadecimal values</a>
+that may look a little strange. Hexadecimal numbers are magical, and if you
+are not careful, you can use them to curse other people. This is why
+we call them <i>hex</i> numbers.
 </p>
 
 <p>
-If you click the switch that shows: <b>Dec &lt;-&gt; Hex</b> below the <b>Step</b>
-button, you will see all the numbers change between decimal (base 10)
-and hexadecimal (base 16). Notice that the second strip of memory is
-labeled <code>80</code> which seems a little nicer instead of the original
-decimal value of <code>128</code>.
+Since our computers are based on <a href="sub-binary.html">binary numbers</a> (and are also highly
+resistant to magical energies), we often find it easier to program
+with <i>hex</i> numbers.
 </p>
 
 <p>
-I think it is time to actually program this, so let's move to the next lesson.
+Notice that our memory cell location <code>129</code> in <i>hex</i> is <code>81</code>, which
+makes more sense since our first light should be tied to memory
+location with a one in it, don&rsquo;t you think?
 </p>
+
+<p>
+In our program, we can specify <i>hex</i> numbers by prefixing them with a <i>hashtag</i>.
+The following program is exactly the same as our previous one:
+</p>
+
+<pre class="example">
+SET #81 2
+</pre>
+
+<p>
+Press <b>Load</b> and you will see that nothing really changed.
+</p>
+
+<p>
+You can type part of your program with either <i>hex</i> numbers (if
+prefixed with a hashtag) or decimal numbers, no matter what the <b>Dec
+&lt;-&gt; Hex</b> button reads.
+</p>
+
+<p>
+Well, we&rsquo;ve not written the same program three times in three
+different ways. I think it must be time to write a more interesting
+program.
+</p>
+</div>
+</div>
 </div>
 </body>
 </html>

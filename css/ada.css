@@ -1,10 +1,10 @@
 @font-face {
     font-family: apple;
-    src: url(fonts/PrintChar21.ttf);
+    src: url(../fonts/PrintChar21.ttf);
 }
 @font-face {
     font-family: motter;
-    src: url(fonts/mottertektura.ttf);
+    src: url(../fonts/mottertektura.ttf);
 }
 
 body {
@@ -34,7 +34,7 @@ h1 {
 #monitor {
     float: left;
     background-color: beige;
-    background-image: url(img/monitor-background-supersoft.png);
+    background-image: url(../img/monitor-background-supersoft.png);
     background-size: 100% 100%;
     padding: 20px;
     margin-left: 20px;
@@ -88,12 +88,11 @@ ol.codes:first-child {
 
 #column-1 {
     float: left;
-    margin-right: 10px;
 }
 
 #computer-panel {
     clear: both;
-    background-image: url(img/green-circuit-board.svg);
+    background-image: url(../img/green-circuit-board.svg);
     background-size: auto 100%;
     border-radius: 10px;
 }

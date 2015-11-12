@@ -6,7 +6,7 @@
 <!-- 2015-11-11 Wed 21:26 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Limits of our Computer</title>
+<title>Hexadecimal Numbers</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Howard Abrams" />
 <style type="text/css">
@@ -159,103 +159,217 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">The Limits of our Computer</h1>
+<h1 class="title">Hexadecimal Numbers</h1>
 <p>
-Erase your program and type the following (or, you can click the arrow
-icon on the right side of the box below to automatically copy it into
-the simulator):
-</p>
-
-<pre class="example">
-260
-</pre>
-
-<p>
-In this case, don't separate the numbers with spaces, as we're
-playing around. Press the <b>Load</b> button, and our "program" places a
-<code>4</code> in the first memory location and that is all.
+Computers like numbers in base 2 &#x2026; or binary. But typing the number
+27 in binary is: <code>11011</code> &#x2026; quite tedious. However, <b>decimal notation</b>
+(a number system with ten symbols that we use all the time), isn’t
+good for computers since ten isn't based on two.
 </p>
 
 <p>
-<b>Why?</b>
+We need a number system for both computers and people. This is why you
+may run across <b>hexadecimal</b> which uses <i>sixteen</i> symbols:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Number</th>
+<th scope="col" class="org-left">Sixteen</th>
+<th scope="col" class="org-left">Ones</th>
+<th scope="col" class="org-left">Number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Zero</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>0</code></td>
+</tr>
+
+<tr>
+<td class="org-left">One</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>1</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Two</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>2</code></td>
+<td class="org-left"><code>2</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Three</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>3</code></td>
+<td class="org-left"><code>3</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Four</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>4</code></td>
+<td class="org-left"><code>4</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Five</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>5</code></td>
+<td class="org-left"><code>5</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Six</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>6</code></td>
+<td class="org-left"><code>6</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Seven</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>7</code></td>
+<td class="org-left"><code>7</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Eight</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>8</code></td>
+<td class="org-left"><code>8</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Nine</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>9</code></td>
+<td class="org-left"><code>9</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Ten</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>A</code></td>
+<td class="org-left"><code>A</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Eleven</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>B</code></td>
+<td class="org-left"><code>B</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Twelve</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>C</code></td>
+<td class="org-left"><code>C</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Thirteen</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>D</code></td>
+<td class="org-left"><code>D</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Fourteen</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>E</code></td>
+<td class="org-left"><code>E</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Fifteen</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>F</code></td>
+<td class="org-left"><code>F</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Sixteen</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>10</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Seventeen</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>11</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Eighteen</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>2</code></td>
+<td class="org-left"><code>12</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Nineteen</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>3</code></td>
+<td class="org-left"><code>13</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Twenty</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>4</code></td>
+<td class="org-left"><code>14</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Hundred</td>
+<td class="org-left"><code>6</code></td>
+<td class="org-left"><code>4</code></td>
+<td class="org-left"><code>64</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Two Hundred</td>
+<td class="org-left"><code>C</code></td>
+<td class="org-left"><code>8</code></td>
+<td class="org-left"><code>C8</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Two Hundred and Fifty-five</td>
+<td class="org-left"><code>F</code></td>
+<td class="org-left"><code>F</code></td>
+<td class="org-left"><code>FF</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<i>One Hundred</i> is <code>64</code> because six ✕ sixteen is ninety-six plus four is one hundred.
 </p>
 
 <p>
-Like early computers from the 1970's and 80's, our computer is limited
-to numbers less than 256. A very odd number, but not if you think like
-a computer.
-</p>
-
-<p>
-Computers think in <a href="sub-binary.html">binary numbers</a>, so all numbers are based on <i>two</i>.
-</p>
-
-<p>
-And:
-</p>
-
-<p>
-2 x 2 x 2 x 2 x 2 x 2 x 2 x 2 = 256
-</p>
-
-<p>
-That is 2 times itself <i>eight</i> times, or <i>two</i> to the power of
-<i>eight</i>. We write this in math as 2<sup>8</sup>. You may have heard of 8-bit? No
-matter, it was <a href="sub-early-limits.html">just a limitation of these early computers</a>.
-</p>
-
-<p>
-<b>Why 4?</b>
-</p>
-
-<p>
-You might think that putting 260 into a cell that can only hold
-numbers less than 256 would leave 255, but computer cells <i>roll over</i>.
-</p>
-
-<p>
-The computer fills the cell to <code>255</code>, but it still has more to go, so
-it rolls back around to <code>0</code> for the 256, <code>1</code> for the 257, <code>2</code> for the
-258 &#x2026; eventually leaving <code>4</code> in the memory cell location.
-</p>
-
-<p>
-Before we move on, let's try out another problem. Let's put the
-following program:
-</p>
-
-<pre class="example">
-#A B #C
-</pre>
-
-<p>
-When you press <b>Load</b>, you will see that our first memory cell has
-<code>10</code>, the second has <code>0</code>, and the third has <code>12</code>. What is going on
-here?
-</p>
-
-<p>
-Well, the <code>B</code> is clearly not a number, so putting <code>0</code> in the second
-memory location would be expected, but what about the <i>hashtags</i>?
-</p>
-
-<p>
-<code>#A</code> is a number&#x2026; just not in our normal decimal format. It just
-uses a base of 16, instead of 10. This is called <a href="sub-hexadecimal.html">hexadecimal</a>, and
-since 16 is a power of two (2<sup>4</sup>), it is sometimes easier to use when
-you are dealing with computers.
-</p>
-
-<p>
-If you click the switch that shows: <b>Dec &lt;-&gt; Hex</b> below the <b>Step</b>
-button, you will see all the numbers change between decimal (base 10)
-and hexadecimal (base 16). Notice that the second strip of memory is
-labeled <code>80</code> which seems a little nicer instead of the original
-decimal value of <code>128</code>.
-</p>
-
-<p>
-I think it is time to actually program this, so let's move to the next lesson.
+Two hundred is <code>C8</code> because <code>C</code> is <i>twelve</i> and twelve ✕ sixteen is
+one-hundred and ninety-two (just add eight more to get two-hundred).
 </p>
 </div>
 </body>

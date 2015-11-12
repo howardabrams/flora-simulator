@@ -1,10 +1,10 @@
 @font-face {
     font-family: apple;
-    src: url(fonts/PrintChar21.ttf);
+    src: url(../fonts/PrintChar21.ttf);
 }
 @font-face {
     font-family: motter;
-    src: url(fonts/mottertektura.ttf);
+    src: url(../fonts/mottertektura.ttf);
 }
 
 html, body  {
@@ -28,6 +28,10 @@ body {
     background: -webkit-linear-gradient(beige, white); /* For Safari */
     background: -moz-linear-gradient(beige, white);    /* For Firefox */
     background: linear-gradient(beige, white);
+}
+
+.apanel img {
+    max-width: 100%;
 }
 
 h1 {
@@ -61,10 +65,15 @@ a {
 }
 
 blockquote {
-    border: 2px solid purple;
-    padding: 12px;
+    border: 2px solid #60587A;
     border-radius: 20px;
-    background-color: #FDE6FF;
+    padding: 12px;
+    background-color: #9D99A9;
+    color: #F1F1F2;
+}
+
+blockquote a {
+    background-color: #C6C4CB;
 }
 
 code {

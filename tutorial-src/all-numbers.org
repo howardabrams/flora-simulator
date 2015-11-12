@@ -1,0 +1,34 @@
+#+TITLE:  Everything is Numbers
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 08
+#+STARTUP: inlineimages
+
+[[file:sub-ada.org][Ada Lovelace]]’s /big idea/ was that a number isn’t always a number.
+
+For instance, what does this symbol represent?
+
+#+HTML: <img src="img/numbers-1.svg" />
+
+Of course, that is /two hundred and twenty-two/. Here’s a trick
+question: how /many/ do you see? Perhaps, it would be better if I
+showed you the previous symbol slightly differently:
+
+#+HTML: <img src="img/numbers-2.svg" />
+
+No, you don’t /see/ two-hundred and twenty-two ... you just see
+/three/ symbols that look like the numeral two.
+
+In other words, the answer depends on /context/.
+
+Computers only understand numbers (actually, they understand [[file:sub-binary.org][a limited
+numbering system]] called /binary/), but if a computer only deals with
+numbers, how can it show us words in an email, or pictures of cats
+from the Internet, or even movies?
+
+Context. Sometimes a number is a number, like /three/, but sometimes
+the 3 is the /third command/ or it could be the letter "C", or the
+shade or red color.
+
+This first lesson is that numbers aren't always numbers, so let's go
+to the next lesson to see how we can use that to build a computer.

@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Outline</title>
-<!-- 2015-11-11 Wed 21:27 -->
+<!-- 2015-11-11 Wed 21:26 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Welcome</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Howard Abrams" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -58,15 +65,14 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -88,6 +94,22 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
+   <style type="text/css">
+    body { font-family: 'Lucida Grande', sans-serif;
+           margin: 20px;
+         }
+</style>
+
+   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+   <style type='text/css'>
+      body {
+         font-family: 'Source Sans Pro', sans-serif;
+      }
+      pre, code {
+         font-family: 'Source Code Pro', monospace;
+      }
+   </style>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -137,22 +159,77 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Outline</h1>
+<h1 class="title">Welcome</h1>
 <p>
-Let's just jam some notes&#x2026;
+<b>What is this?</b>
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Introduction</h2>
-<div class="outline-text-2" id="text-1">
 <p>
-      LDX 6
-LOOP: INX
-      SAX #81
-      JMP LOOP
+What you see here is a <i>simulator</i> of how a computer works at its
+core.
 </p>
-</div>
-</div>
+
+<p>
+<b>Why is this Important?</b>
+</p>
+
+<p>
+How does the computer in your phone work? Did you know your phone has
+a computer? Your phone has more computing power than the computers we
+used to get astronauts on the Moon!
+</p>
+
+<p>
+Strip away the icons and other layers, and you'll find a simpler <b>core</b>.
+When I was a kid, we programmed the computer's core, but now that core
+is inaccessible.
+</p>
+
+<p>
+So I built a <i>simulator</i> that pretends to be one of these early
+computer cores (called a <i>central processing unit</i>).
+</p>
+
+<p>
+<b>How do I learn?</b>
+</p>
+
+<p>
+Each section can be opened by clicking on its header below. Like a
+book, you will only see one section at a time. Clicking on darker words,
+<a href="sub-sample.html">like these</a>, will give you background and interesting stories.
+</p>
+
+<p>
+Each section has code that you can copy and paste into the simulator
+on the other side of the screen. The "bar" between can be moved if you
+want either the simulator or this tutorial larger.
+</p>
+
+<p>
+Sounds interesting? Click to open the next section!
+</p>
+
+<blockquote>
+<p>
+<b>Technical Note:</b> The simulator roughly behaves like early 8-bit
+ CPUs from the 1970s, like <a href="sub-6502.html">the 6502</a> (hence the reason why this system
+ resembles the original Apple ][ computer). It is <i>not</i> a full
+ representation (at least, not yet), as I felt it was more important
+ to be easier and simpler.
+</p>
+
+<p>
+If you are interested in learning the 6502 assembly language,
+check out <a href="http://skilldrick.github.io/easy6502/">Nick Morgan's Online Emulator</a>.
+</p>
+
+<p>
+If you are interested in expanding this project, it is all open
+source located at <a href="http://github.com/howardabrams/flora-simulator">http://github.com/howardabrams/flora-simulator</a>
+and the <a href="https://github.com/howardabrams/flora-simulator/blob/master/ada.coffee">computer emulator</a> is written in a language called <a href="http://www.coffeescript.org/">CoffeeScript</a>.
+</p>
+</blockquote>
 </div>
 </body>
 </html>

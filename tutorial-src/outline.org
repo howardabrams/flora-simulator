@@ -1,0 +1,15 @@
+#+TITLE:  Outline
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 08
+#+TAGS:   education
+
+Let's just jam some notes...
+
+* Introduction
+
+
+      LDX 6
+LOOP: INX
+      SAX #81
+      JMP LOOP

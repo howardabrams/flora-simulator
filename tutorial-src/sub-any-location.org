@@ -1,0 +1,16 @@
+#+TITLE:  Any Location?
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 10
+
+While the monkey, I mean, computer, can read /any location/, it can
+only read a location that actually exists.
+
+Alan Turing's original idea was that the strip was /infinitely long/.
+Infinite Strips are hard to find, but the longer this strip, the more
+your computer can do.
+
+When I was a kid, I upgraded my computer to have 48,000 cells on the
+strip of memory (actually, 49,152 cells to be precise). I thought 48K
+was a lot, but I bet the phone in your pocket has 8,000,000,000 cells
+or more!

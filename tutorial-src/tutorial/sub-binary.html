@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2015-11-11 Wed 21:26 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Binary Numbers</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Howard Abrams" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+   <style type="text/css">
+    body { font-family: 'Lucida Grande', sans-serif;
+           margin: 20px;
+         }
+</style>
+
+   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+   <style type='text/css'>
+      body {
+         font-family: 'Source Sans Pro', sans-serif;
+      }
+      pre, code {
+         font-family: 'Source Code Pro', monospace;
+      }
+   </style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Binary Numbers</h1>
+<p>
+What is the difference between a <i>number</i> and a <i>numeral</i>?
+</p>
+
+<p>
+We say that a numeral is a <i>symbol</i> for a number.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Number</th>
+<th scope="col" class="org-right">Indo-Arabic</th>
+<th scope="col" class="org-left">Chinese</th>
+<th scope="col" class="org-left">Thai</th>
+<th scope="col" class="org-left">Hebrew</th>
+<th scope="col" class="org-left">Roman</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Zero</td>
+<td class="org-right">0</td>
+<td class="org-left">零</td>
+<td class="org-left">๐</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">One</td>
+<td class="org-right">1</td>
+<td class="org-left">一</td>
+<td class="org-left">๑</td>
+<td class="org-left">א</td>
+<td class="org-left">I</td>
+</tr>
+
+<tr>
+<td class="org-left">Two</td>
+<td class="org-right">2</td>
+<td class="org-left">二</td>
+<td class="org-left">๒</td>
+<td class="org-left">ב</td>
+<td class="org-left">II</td>
+</tr>
+
+<tr>
+<td class="org-left">Three</td>
+<td class="org-right">3</td>
+<td class="org-left">三</td>
+<td class="org-left">๓</td>
+<td class="org-left">ג</td>
+<td class="org-left">III</td>
+</tr>
+
+<tr>
+<td class="org-left">Four</td>
+<td class="org-right">4</td>
+<td class="org-left">四</td>
+<td class="org-left">๔</td>
+<td class="org-left">ד</td>
+<td class="org-left">IV</td>
+</tr>
+
+<tr>
+<td class="org-left">Five</td>
+<td class="org-right">5</td>
+<td class="org-left">五</td>
+<td class="org-left">๕</td>
+<td class="org-left">ה</td>
+<td class="org-left">V</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+While many cultures came up with symbols for numbers, the one we use
+now is <i>positional</i>. Its advantages has made it popular.
+</p>
+
+<p>
+Why do we have 10 symbols? Could we use others?
+</p>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Our New System</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<p>
+Let&rsquo;s invent a new numeral system:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Number</th>
+<th scope="col" class="org-left">Numeral</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Zero</td>
+<td class="org-left">☉</td>
+</tr>
+
+<tr>
+<td class="org-left">One</td>
+<td class="org-left">†</td>
+</tr>
+
+<tr>
+<td class="org-left">Two</td>
+<td class="org-left">♒</td>
+</tr>
+
+<tr>
+<td class="org-left">Three</td>
+<td class="org-left">△</td>
+</tr>
+
+<tr>
+<td class="org-left">Four</td>
+<td class="org-left">✦</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+What if this is all the symbols we had?
+</p>
+
+<p>
+Five numerals isn&rsquo;t enough? Well, the Mayans who lived in Central
+America had 20 numerals, so we don&rsquo;t <i>have</i> to always have 10.
+(If you hold out your hands, I bet you can guess why we have ten numerals).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Writing Five</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+<p>
+In our table above, we can easily write the numbers from zero to four,
+since we have a symbol for each.
+</p>
+
+<p>
+How would we write <i>five</i>?
+</p>
+
+<p>
+We don&rsquo;t have a symbol for <i>ten</i>, so we just use a <i>1</i> in the <i>tens</i>
+place.
+</p>
+
+<p>
+We will just have to have a <i>fives</i> place in our system.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Number</th>
+<th scope="col" class="org-left">Fives</th>
+<th scope="col" class="org-left">Ones</th>
+<th scope="col" class="org-left">Numeral</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Five</td>
+<td class="org-left">†</td>
+<td class="org-left">☉</td>
+<td class="org-left">†☉</td>
+</tr>
+
+<tr>
+<td class="org-left">Six</td>
+<td class="org-left">†</td>
+<td class="org-left">†</td>
+<td class="org-left">††</td>
+</tr>
+
+<tr>
+<td class="org-left">Seven</td>
+<td class="org-left">†</td>
+<td class="org-left">♒</td>
+<td class="org-left">†♒</td>
+</tr>
+
+<tr>
+<td class="org-left">Eight</td>
+<td class="org-left">†</td>
+<td class="org-left">△</td>
+<td class="org-left">†△</td>
+</tr>
+
+<tr>
+<td class="org-left">Nine</td>
+<td class="org-left">†</td>
+<td class="org-left">✦</td>
+<td class="org-left">†✦</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The number <i>seven</i> is <i>one</i> ✕ <i>five</i> + <i>two</i> ✕ <i>one</i>.
+</p>
+
+<p>
+If your head hurts, it probably did when you were in kindergarten
+learning about the <i>tens</i> and <i>hundreds</i> place, right?
+</p>
+
+<p>
+Since you&rsquo;re smart, we&rsquo;ll keep going&#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">Writing Eleven</h2>
+<div class="outline-text-2" id="text-orgheadline3">
+<p>
+What about representing <i>ten</i>? Since <i>ten</i> is really <i>two</i> × <i>five</i>,
+it is still easy:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Number</th>
+<th scope="col" class="org-left">Fives</th>
+<th scope="col" class="org-left">Ones</th>
+<th scope="col" class="org-left">Numeral</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Ten</td>
+<td class="org-left">♒</td>
+<td class="org-left">☉</td>
+<td class="org-left">♒☉</td>
+</tr>
+
+<tr>
+<td class="org-left">Eleven</td>
+<td class="org-left">♒</td>
+<td class="org-left">†</td>
+<td class="org-left">♒†</td>
+</tr>
+
+<tr>
+<td class="org-left">Twelve</td>
+<td class="org-left">♒</td>
+<td class="org-left">♒</td>
+<td class="org-left">♒♒</td>
+</tr>
+
+<tr>
+<td class="org-left">Thirteen</td>
+<td class="org-left">♒</td>
+<td class="org-left">△</td>
+<td class="org-left">♒△</td>
+</tr>
+
+<tr>
+<td class="org-left">Fourteen</td>
+<td class="org-left">♒</td>
+<td class="org-left">✦</td>
+<td class="org-left">♒✦</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+So <i>thirteen</i> is <i>two</i> ✕ <i>five</i> + <i>three</i> ✕ <i>one</i>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Writing Twenty-five</h2>
+<div class="outline-text-2" id="text-orgheadline4">
+<p>
+This works until we get to <i>twenty-four</i>.
+</p>
+
+<p>
+Which is ✦✦ &#x2026; <i>four</i> ✕ <i>five</i> + <i>four</i> ✕ <i>one</i>
+</p>
+
+<p>
+How would we represent <i>twenty-five</i>?
+</p>
+
+<p>
+<i>One hundred</i> is a new positional place in our system because it is
+<i>ten</i> × <i>ten</i>.
+</p>
+
+<p>
+Since ours is <i>based</i> on <i>five</i>, we would have a new position for it:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><i>Twenty-fives</i></th>
+<th scope="col" class="org-left"><i>Fives</i></th>
+<th scope="col" class="org-left"><i>Ones</i></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">†</td>
+<td class="org-left">☉</td>
+<td class="org-left">☉</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+In other words: <i>one</i> ✕ <i>twenty-five</i> + <i>zero</i> ✕ <i>five</i> + <i>zero</i> ✕ <i>one</i>
+</p>
+
+<p>
+So <i>twenty-five</i> is †☉☉, and <i>twenty-six</i> is? Yup: †☉†
+</p>
+
+<p>
+What about writing <i>eighty-nine</i>?
+</p>
+
+<p>
+This is <i>75</i> + <i>10</i> + <i>4</i>:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><i>Twenty-fives</i></th>
+<th scope="col" class="org-left"><i>Fives</i></th>
+<th scope="col" class="org-left"><i>Ones</i></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">△ (3)</td>
+<td class="org-left">♒ (2)</td>
+<td class="org-left">✦ (4)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Written: △♒✦
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">Binary Numerals</h2>
+<div class="outline-text-2" id="text-orgheadline5">
+<p>
+What if we only had <i>two numerals</i>!? Crazy, huh?
+</p>
+
+<p>
+Let&rsquo;s redo our table with new symbols:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Number</th>
+<th scope="col" class="org-left">Numeral</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Zero</td>
+<td class="org-left">○</td>
+</tr>
+
+<tr>
+<td class="org-left">One</td>
+<td class="org-left">●</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Tedious, but simple enough now:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Number</th>
+<th scope="col" class="org-left">Eight</th>
+<th scope="col" class="org-left">Four</th>
+<th scope="col" class="org-left">Two</th>
+<th scope="col" class="org-left">Ones</th>
+<th scope="col" class="org-left">Number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Zero</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">○</td>
+<td class="org-left">○</td>
+</tr>
+
+<tr>
+<td class="org-left">One</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">●</td>
+<td class="org-left">●</td>
+</tr>
+
+<tr>
+<td class="org-left">Two</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">●</td>
+<td class="org-left">○</td>
+<td class="org-left">●○</td>
+</tr>
+
+<tr>
+<td class="org-left">Three</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">●</td>
+<td class="org-left">●</td>
+<td class="org-left">●●</td>
+</tr>
+
+<tr>
+<td class="org-left">Four</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">●</td>
+<td class="org-left">○</td>
+<td class="org-left">○</td>
+<td class="org-left">●○</td>
+</tr>
+
+<tr>
+<td class="org-left">Five</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">●</td>
+<td class="org-left">○</td>
+<td class="org-left">●</td>
+<td class="org-left">●○●</td>
+</tr>
+
+<tr>
+<td class="org-left">Six</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">●</td>
+<td class="org-left">●</td>
+<td class="org-left">○</td>
+<td class="org-left">●●○</td>
+</tr>
+
+<tr>
+<td class="org-left">Seven</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">●</td>
+<td class="org-left">●</td>
+<td class="org-left">●</td>
+<td class="org-left">●●●</td>
+</tr>
+
+<tr>
+<td class="org-left">Eight</td>
+<td class="org-left">●</td>
+<td class="org-left">○</td>
+<td class="org-left">○</td>
+<td class="org-left">○</td>
+<td class="org-left">●○○○</td>
+</tr>
+
+<tr>
+<td class="org-left">Nine</td>
+<td class="org-left">●</td>
+<td class="org-left">○</td>
+<td class="org-left">○</td>
+<td class="org-left">●</td>
+<td class="org-left">●○○●</td>
+</tr>
+
+<tr>
+<td class="org-left">Ten</td>
+<td class="org-left">●</td>
+<td class="org-left">○</td>
+<td class="org-left">●</td>
+<td class="org-left">○</td>
+<td class="org-left">●○●○</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The number <i>ten</i> is <i>1</i> ✕ <i>8</i> + <i>1</i> ✕ <i>2</i>.
+</p>
+
+<p>
+Why is this important? Computers only have two digits &#x2026; an
+electrical current that is on, and missing a current that is off.
+</p>
+
+<p>
+We call numbers represented with only two symbols, <b>binary</b>.
+</p>
+
+<p>
+However, since we don’t have an empty and filled in circles on most
+keyboards, we just reuse <code>0</code> and <code>1</code>:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Number</th>
+<th scope="col" class="org-left">Eight</th>
+<th scope="col" class="org-left">Four</th>
+<th scope="col" class="org-left">Two</th>
+<th scope="col" class="org-left">Ones</th>
+<th scope="col" class="org-left">Number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Zero</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>0</code></td>
+</tr>
+
+<tr>
+<td class="org-left">One</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>1</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Two</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>10</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Three</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>11</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Four</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>10</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Five</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>101</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Six</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>110</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Seven</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>111</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Eight</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>1000</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Nine</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>1001</code></td>
+</tr>
+
+<tr>
+<td class="org-left">Ten</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>1010</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Telling the computer that the number <code>1000</code> is eight instead of one
+thousand is another story.
+</p>
+
+<p>
+Now, you will be able to understand the popular joke:
+</p>
+
+<blockquote>
+<p>
+There are only <code>10</code> types of people in the world,
+Those who understand binary and those that who don’t.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+</body>
+</html>

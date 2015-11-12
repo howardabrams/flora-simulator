@@ -1,0 +1,9 @@
+#+TITLE:  Sample Link
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 10
+
+Nicely done! Since you actually pay attention and can follow
+directions, you should be rewarded with a *giant* cookie.
+
+#+HTML: <img src="img/cookie.svg" />

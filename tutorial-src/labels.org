@@ -1,0 +1,32 @@
+#+TITLE:  Labeling Locations
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Nov 11
+
+The looping problem in the last lesson will be easier once we /name/
+some memory locations as special.
+
+Check out this updated version of our previous program:
+
+#+BEGIN_EXAMPLE
+      LDX 0    ; Put 0 in X
+LOOP: STX #81  ; Store X in Light
+      INX      ; Increment X
+      JMP LOOP ; Rinse and repeat
+#+END_EXAMPLE
+
+Having the word =LOOP:= (with a colon) marks the current memory
+location, and /names/ it. In this case, it is named =LOOP=.
+
+This allows our =JMP= instruction to jump to the =LOOP= name. This
+means we don't have to load the program into memory and see where what
+memory location contains the instruction (or worse, walking through
+our program counting).
+
+The added benefit is that if we were to add another instruction to our
+program, we don't have to change our addresses.
+
+That's the basics of programming our computer simulator as well as a
+programming language called Assembly. We have many more instructions
+and a few more concepts to learn, but you are now on your way to
+really understanding computers.
