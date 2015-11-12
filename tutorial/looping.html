@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Looping Around</title>
+<!-- 2015-11-11 Wed 17:41 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Howard Abrams" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Looping Around</h1>
+<p>
+In our previous lesson, we put the value <code>1</code> and <code>2</code> into memory
+location <code>129</code> in order to have the first light show different
+colors. What if we wanted to go through all the possible numbers so
+that we can step through all values to see what colors will show.
+</p>
+
+<p>
+I suppose we <i>could</i> do something like:
+</p>
+
+<pre class="example">
+SET 129 1
+SET 129 2
+SET 129 3
+</pre>
+
+<p>
+But this is too much typing. We need a way to add one to the value.
+Doing math requires a <i>register</i>. Remember the monkey who could think
+of one thing at a time? Well, what the monkey can remember is called a
+<i>register</i>.
+</p>
+
+<p>
+Our monkey, er&#x2026; computer, is very smart. It can remember <i>three</i>
+things:
+</p>
+
+<ul class="org-ul">
+<li>X Register
+</li>
+<li>Y Register
+</li>
+<li>Z Register
+</li>
+</ul>
+
+<p>
+While you really only need <i>one</i> register, having more registers is easier.
+</p>
+
+<p>
+Here is a description of what we want our program to do:
+</p>
+
+<ol class="org-ol">
+<li>Start off with some initial value in a register
+</li>
+<li>Put the value from the register into memory <code>129</code>
+</li>
+<li>Increment the value in the register
+</li>
+<li>Repeat step 2&#x2026;
+</li>
+</ol>
+
+<p>
+Here is the first three steps of our program:
+</p>
+
+<pre class="example">
+LDX 0    ; Put 0 in X Register
+STX #81  ; Store X in First Light
+INX      ; Increment value in X
+</pre>
+
+<p>
+You may be wondering about all the words following the semicolons.
+Those are <i>comments</i>, and let us leave notes for ourselves. The
+simulator ignores all words following a semicolon, so we can write
+anything we want.
+</p>
+
+<p>
+The <code>LDX</code> looks at the next value, and puts that in the X Register.
+When we <b>Load</b> our program, the <b>X Register</b> is already set to 0, but
+this isn't always the case with computers, so we generally want to set
+our values when we start.
+</p>
+
+<p>
+The <code>STX</code> stores the value in the X register in some memory
+address. In this case, our old friend, <code>#81</code> &#x2026; the memory location
+that controls the first light bulb's color.
+</p>
+
+<p>
+The <code>INX</code> increments the value in the X register.
+</p>
+
+<p>
+Pretty straight forward, eh? Now that the X register is incremented,
+let's <i>jump</i> back in our program to where we can store the X
+register's contents back into our memory location.
+</p>
+
+<p>
+For this, we use the <code>JMP</code> instruction. It allows us to jump to any
+point in memory by setting a new value in our <b>Pointer Register</b>.
+</p>
+
+<p>
+But what is the address we want to jump to? Well, if we click the
+<b>Load</b> button, we will see our program in memory:
+</p>
+
+<ol class="org-ol">
+<li value="0">has a <code>2</code>, which is the instruction number for <code>LDX</code>
+</li>
+<li>has a <code>0</code>, which is the value to store in the X register
+</li>
+<li>has a <code>6</code>, which is the instruction number for <code>STX</code>
+</li>
+<li>has a <code>129</code>, which is the memory address for the light
+</li>
+<li>has a <code>10</code>, the instruction number for <code>INX</code>
+</li>
+</ol>
+
+<p>
+So, clearly, we need to <i>jump</i> to memory location <code>2</code>!
+</p>
+
+<p>
+Here is our updated program:
+</p>
+
+<pre class="example">
+LDX 0    ; Put 0 in X Register
+STX #81  ; Store X Reg in Light
+INX      ; Increment X Register
+JMP 2    ; Loop to store X reg
+</pre>
+
+<p>
+Click the <b>Load</b> and then continually click the <b>Step</b> to see if you
+can figure out the pattern for what values choose the color for the
+light.
+</p>
+
+<p>
+By the way, jumping back to where we've already been, is called <i>looping</i>.
+</p>
+
+<p>
+Our programs are getting more interesting as we learn more of the
+instructions that are available. But that <code>JMP</code> feature isn't so nice.
+In the next section, we'll learn how to make that easier.
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2015 Nov 11</p>
+<p class="author">Author: Howard Abrams</p>
+<p class="date">Created: 2015-11-11 Wed 17:41</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
